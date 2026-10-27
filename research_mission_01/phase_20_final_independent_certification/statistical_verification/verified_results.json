@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "dataset_sha256": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+    "registry_sha256": "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c",
+    "total_rollouts": 400,
+    "models": [
+      "Qwen/Qwen2.5-Math-1.5B",
+      "Qwen/Qwen2.5-Math-1.5B-Instruct"
+    ],
+    "conditions": [
+      "CONTROL",
+      "RECOVERY"
+    ],
+    "problem_count": 20,
+    "seed_count": 5,
+    "seeds": [
+      401,
+      402,
+      403,
+      404,
+      405
+    ]
+  },
+  "cells": {
+    "Base_CONTROL": {
+      "total": 100,
+      "correct_or_recovered": 100,
+      "rate": 1.0,
+      "propagated": 0,
+      "propagation_rate": 0.0,
+      "diverged": 0,
+      "divergence_rate": 0.0,
+      "ci_95_exact": [
+        0.963783,
+        1.0
+      ]
+    },
+    "Base_RECOVERY": {
+      "total": 100,
+      "correct_or_recovered": 0,
+      "rate": 0.0,
+      "propagated": 100,
+      "propagation_rate": 1.0,
+      "diverged": 0,
+      "divergence_rate": 0.0,
+      "ci_95_exact": [
+        0.0,
+        0.036217
+      ]
+    },
+    "Instruct_CONTROL": {
+      "total": 100,
+      "correct_or_recovered": 100,
+      "rate": 1.0,
+      "propagated": 0,
+      "propagation_rate": 0.0,
+      "diverged": 0,
+      "divergence_rate": 0.0,
+      "ci_95_exact": [
+        0.963783,
+        1.0
+      ]
+    },
+    "Instruct_RECOVERY": {
+      "total": 100,
+      "correct_or_recovered": 0,
+      "rate": 0.0,
+      "propagated": 97,
+      "propagation_rate": 0.97,
+      "diverged": 3,
+      "divergence_rate": 0.03,
+      "ci_95_exact": [
+        0.0,
+        0.036217
+      ]
+    }
+  },
+  "clusters": {
+    "n_clusters": 20,
+    "clusters_with_recovery": 0,
+    "cluster_level_95_upper_bound": 0.139108,
+    "exact_cluster_formula_value": 0.139108
+  },
+  "paired_analysis": {
+    "n_pairs": 200,
+    "delta_hat": -1.0,
+    "sample_sd": 0.0,
+    "degenerate_condition": true,
+    "base_model_delta": -1.0,
+    "instruct_model_delta": -1.0
+  },
+  "per_seed": {
+    "401": {
+      "control_accuracy": 1.0,
+      "recovery_accuracy": 0.0,
+      "propagation_rate": 0.975,
+      "divergence_rate": 0.025
+    },
+    "402": {
+      "control_accuracy": 1.0,
+      "recovery_accuracy": 0.0,
+      "propagation_rate": 1.0,
+      "divergence_rate": 0.0
+    },
+    "403": {
+      "control_accuracy": 1.0,
+      "recovery_accuracy": 0.0,
+      "propagation_rate": 0.975,
+      "divergence_rate": 0.025
+    },
+    "404": {
+      "control_accuracy": 1.0,
+      "recovery_accuracy": 0.0,
+      "propagation_rate": 1.0,
+      "divergence_rate": 0.0
+    },
+    "405": {
+      "control_accuracy": 1.0,
+      "recovery_accuracy": 0.0,
+      "propagation_rate": 0.975,
+      "divergence_rate": 0.025
+    }
+  },
+  "combined": {
+    "control": {
+      "total": 200,
+      "success": 200,
+      "rate": 1.0,
+      "ci_95_exact": [
+        0.981725,
+        1.0
+      ]
+    },
+    "recovery": {
+      "total": 200,
+      "recovery_count": 0,
+      "recovery_rate": 0.0,
+      "ci_95_exact": [
+        0.0,
+        0.018275
+      ],
+      "propagation_count": 197,
+      "propagation_rate": 0.985,
+      "divergence_count": 3,
+      "divergence_rate": 0.015
+    }
+  },
+  "bootstrap": {
+    "resamples": 10000,
+    "mean_delta": -1.0,
+    "bootstrap_se": 0.0
+  }
+}

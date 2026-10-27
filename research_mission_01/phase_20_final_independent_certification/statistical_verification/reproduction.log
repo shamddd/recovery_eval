@@ -1,0 +1,92 @@
+================================================================================
+RECOVERYEVAL PHASE XX: INDEPENDENT DATASET REPRODUCTION & AUDIT
+================================================================================
+Dataset Path:       data/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl
+Expected SHA-256:   b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15
+Actual SHA-256:     b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15
+Dataset Integrity:  VERIFIED BIT-EXACT MATCH
+
+Registry Path:      research_mission_01/phase_5_final_experimental_validation/BALANCED_PROMPT_REGISTRY.json
+Expected SHA-256:   d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c
+Actual SHA-256:     d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c
+Registry Integrity: VERIFIED BIT-EXACT MATCH
+
+--------------------------------------------------------------------------------
+BENCHMARK AUDIT: 20 Problems in Registry
+--------------------------------------------------------------------------------
+All 20 benchmark problems verified for exact arithmetic and length balance.
+
+--------------------------------------------------------------------------------
+PRIMARY RECORD INTEGRITY AUDIT
+--------------------------------------------------------------------------------
+Total Records Read:      400
+Unique Rollout IDs:      400
+Truncated Records:       0
+Models (2):            ['Qwen/Qwen2.5-Math-1.5B', 'Qwen/Qwen2.5-Math-1.5B-Instruct']
+Conditions (2):        ['CONTROL', 'RECOVERY']
+Problems (20):          ['gsm8k_fresh_000', 'gsm8k_fresh_001', 'gsm8k_fresh_002', 'gsm8k_fresh_003', 'gsm8k_fresh_004', 'gsm8k_fresh_005', 'gsm8k_fresh_006', 'gsm8k_fresh_007', 'gsm8k_fresh_008', 'gsm8k_fresh_009', 'gsm8k_fresh_010', 'gsm8k_fresh_011', 'gsm8k_fresh_012', 'gsm8k_fresh_013', 'gsm8k_fresh_014', 'gsm8k_fresh_015', 'gsm8k_fresh_016', 'gsm8k_fresh_017', 'gsm8k_fresh_018', 'gsm8k_fresh_019']
+Seeds (5):             [401, 402, 403, 404, 405]
+Factorial Structure:     EXACT 2 x 20 x 2 x 5 = 400 COMPLETE MATRIX CONFIRMED
+
+--------------------------------------------------------------------------------
+MULTI-LAYER VERIFIER EXECUTION & DISAGREEMENT AUDIT
+--------------------------------------------------------------------------------
+Total Disagreements between Structural & Heuristic Verifiers: 3
+  - Rollout balanced_gsm8k_fresh_004_control_Qwen2.5-Math-1.5B_s405 (Base gsm8k_fresh_004 s=405): Heuristic missed 'CORRECT' because final tokens lacked bare integer.
+  - Rollout balanced_gsm8k_fresh_006_control_Qwen2.5-Math-1.5B_s405 (Base gsm8k_fresh_006 s=405): Heuristic missed 'CORRECT' because final tokens lacked bare integer.
+  - Rollout balanced_gsm8k_fresh_013_control_Qwen2.5-Math-1.5B_s405 (Base gsm8k_fresh_013 s=405): Heuristic missed 'CORRECT' because final tokens lacked bare integer.
+
+Exported Experimental Matrix: /Users/shamthakare/.gemini/antigravity/scratch/recovery_eval/research_mission_01/phase_20_final_independent_certification/statistical_verification/experimental_matrix.csv (400 records)
+
+--------------------------------------------------------------------------------
+AGGREGATED EMPIRICAL EVALUATION RESULTS
+--------------------------------------------------------------------------------
+Cell (Model, Condition)      | Total | Correct/Rec | Propagated | Diverged | Exact 95% CI    
+----------------------------------------------------------------------------------------
+Base CONTROL                 |   100 | 100 (100.0%) |   0 (  0.0%) |  0 ( 0.0%) | [96.38%, 100.00%]
+Base RECOVERY                |   100 |   0 (  0.0%) | 100 (100.0%) |  0 ( 0.0%) | [ 0.00%,  3.62%]
+Instruct CONTROL             |   100 | 100 (100.0%) |   0 (  0.0%) |  0 ( 0.0%) | [96.38%, 100.00%]
+Instruct RECOVERY            |   100 |   0 (  0.0%) |  97 ( 97.0%) |  3 ( 3.0%) | [ 0.00%,  3.62%]
+----------------------------------------------------------------------------------------
+Combined CONTROL (T=0)       |   200 | 200 (100.0%) | N/A        | N/A      | [98.17%, 100.00%]
+Combined RECOVERY (T=1)      |   200 |   0 (  0.0%) | 197 ( 98.5%) |  3 ( 1.5%) | [ 0.00%,  1.83%]
+
+--------------------------------------------------------------------------------
+CAUSAL CONTRAST AND FINITE-SAMPLE ESTIMAND AUDIT
+--------------------------------------------------------------------------------
+Total Paired Units (M, P, S): 200
+Observed Sample Contrast:      Delta_hat = -1.0000
+Sample Standard Deviation:     s_D = 0.0000
+Degenerate Variance Status:    s_D == 0.0000 CONFIRMED across all 200 paired contrasts.
+Statistical Interpretation:    Student's t-statistic is undefined (0/0). Asymptotic p-value is uncomputable.
+Finite-Sample Inference:       Every single evaluated unit experienced y(0)=1 and y(1)=0 => Delta_i = -1 for 100% of pairs.
+
+--------------------------------------------------------------------------------
+CLUSTER-LEVEL SENSITIVITY BOUND AUDIT (N=20 Problem Clusters)
+--------------------------------------------------------------------------------
+Number of Problem Clusters:              N = 20
+Clusters with At Least 1 Recovery:       k = 0 / 20
+Exact Rule-of-Three / Binomial Upper:    P(Cluster Recovery) <= 13.91% (95% Confidence)
+Exact Formula: 1 - 0.05^(1/20) =         13.91%
+Clarification: This bound estimates the probability that a PROBLEM CLUSTER exhibits >=1 recovery,
+NOT an unconditional rollout-level recovery rate (which has rollout-level upper bound <= 1.83%).
+
+--------------------------------------------------------------------------------
+CLUSTERED BLOCK BOOTSTRAP RESAMPLING (10,000 resamples)
+--------------------------------------------------------------------------------
+Bootstrap Resamples:                     10,000
+Mean Bootstrap Delta:                    -1.0000
+Empirical Bootstrap Standard Error:      0.000000 (Degenerate due to 0 counter-examples)
+
+--------------------------------------------------------------------------------
+PER-SEED EMPIRICAL OUTCOMES
+--------------------------------------------------------------------------------
+Seed   | Total | Control Acc  | Rec Acc    | Propagated | Diverged
+-----------------------------------------------------------------
+   401 |    80 | 40/40 (100.0%) | 0/40 ( 0.0%) | 39/40 ( 97.5%) | 1/40 ( 2.5%)
+   402 |    80 | 40/40 (100.0%) | 0/40 ( 0.0%) | 40/40 (100.0%) | 0/40 ( 0.0%)
+   403 |    80 | 40/40 (100.0%) | 0/40 ( 0.0%) | 39/40 ( 97.5%) | 1/40 ( 2.5%)
+   404 |    80 | 40/40 (100.0%) | 0/40 ( 0.0%) | 40/40 (100.0%) | 0/40 ( 0.0%)
+   405 |    80 | 40/40 (100.0%) | 0/40 ( 0.0%) | 39/40 ( 97.5%) | 1/40 ( 2.5%)
+
+Exported Verified Results JSON: /Users/shamthakare/.gemini/antigravity/scratch/recovery_eval/research_mission_01/phase_20_final_independent_certification/statistical_verification/verified_results.json
