@@ -8,7 +8,7 @@ if pkg_dir not in sys.path:
     sys.path.insert(0, pkg_dir)
 
 def test_no_synthetic_probability_in_runner():
-    runner_file = os.path.join(pkg_dir, "recovery_eval/execution/neural_runner.py")
+    runner_file = os.path.join(pkg_dir, "src/recovery_eval/execution/neural_runner.py") if os.path.exists(os.path.join(pkg_dir, "src/recovery_eval/execution/neural_runner.py")) else os.path.join(pkg_dir, "recovery_eval/execution/neural_runner.py")
     with open(runner_file, "r") as f:
         code = f.read()
         

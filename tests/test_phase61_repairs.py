@@ -3,7 +3,7 @@ import sys
 import os
 import json
 
-pkg_dir = os.path.expanduser("/Users/shamthakare/.gemini/antigravity/scratch/research-next/ieee_bigdata_2026")
+pkg_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src"))
 if pkg_dir not in sys.path:
     sys.path.insert(0, pkg_dir)
 
