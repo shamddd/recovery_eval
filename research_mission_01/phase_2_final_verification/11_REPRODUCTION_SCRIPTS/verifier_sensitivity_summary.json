@@ -1,0 +1,47 @@
+{
+  "total_false_negatives": 87,
+  "false_negatives_by_cell": {
+    "('Base', 'RECOVERY')": 36,
+    "('Base', 'CONTROL')": 47,
+    "('Instruct', 'CONTROL')": 3,
+    "('Instruct', 'RECOVERY')": 1
+  },
+  "regime_results": {
+    "original": {
+      "base_ctrl": 0.38,
+      "base_rec": 0.21,
+      "inst_ctrl": 0.92,
+      "inst_rec": 0.64,
+      "delta_base": -0.17,
+      "delta_inst": -0.28,
+      "contrast": -0.11000000000000001
+    },
+    "string_presence": {
+      "base_ctrl": 0.85,
+      "base_rec": 0.57,
+      "inst_ctrl": 0.95,
+      "inst_rec": 0.65,
+      "delta_base": -0.28,
+      "delta_inst": -0.29999999999999993,
+      "contrast": -0.019999999999999907
+    },
+    "conservative": {
+      "base_ctrl": 0.14,
+      "base_rec": 0.0,
+      "inst_ctrl": 0.91,
+      "inst_rec": 0.57,
+      "delta_base": -0.14,
+      "delta_inst": -0.3400000000000001,
+      "contrast": -0.20000000000000007
+    },
+    "first_match": {
+      "base_ctrl": 0.7,
+      "base_rec": 0.41,
+      "inst_ctrl": 0.95,
+      "inst_rec": 0.6,
+      "delta_base": -0.29,
+      "delta_inst": -0.35,
+      "contrast": -0.06
+    }
+  }
+}

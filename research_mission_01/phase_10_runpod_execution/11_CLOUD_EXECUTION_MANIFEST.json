@@ -1,0 +1,55 @@
+{
+  "protocol": "2.0-pcppe",
+  "project": "recovery_eval",
+  "author": "Sham Satish Thakare",
+  "email": "shamthakare@gmail.com",
+  "execution_date_utc": "2026-10-26T08:24:00Z",
+  "cloud_platform": {
+    "provider": "RunPod",
+    "pod_id": "jrd1r4du4hy9qi",
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_mb": 24564,
+    "cuda_version": "13.2",
+    "driver_version": "595.91.07",
+    "hourly_rate_usd": 0.34,
+    "actual_billed_spend_usd": 0.1067,
+    "billed_runtime_minutes": 6.82,
+    "residual_storage_cost_per_hr": 0.00
+  },
+  "dataset": {
+    "filename": "10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl",
+    "size_bytes": 382976,
+    "sha256": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+    "total_records": 400,
+    "unique_rollout_ids": 400,
+    "base_records_count": 200,
+    "instruct_records_count": 200,
+    "control_records_count": 200,
+    "recovery_records_count": 200,
+    "seeds": [401, 402, 403, 404, 405],
+    "problems_count": 20,
+    "records_per_cell": 100,
+    "truncation_count": 0,
+    "truncation_rate": 0.0
+  },
+  "model_checkpoints": {
+    "base": {
+      "repository": "Qwen/Qwen2.5-Math-1.5B",
+      "revision": "4a83ca6e4526a4f2da3aa259ec36c259f66b2ab2",
+      "parameters": "1.54B",
+      "precision": "float16"
+    },
+    "instruct": {
+      "repository": "Qwen/Qwen2.5-Math-1.5B-Instruct",
+      "revision": "aafeb0fc6f22cbf0eaeed126eff8be45b0360a35",
+      "parameters": "1.54B",
+      "precision": "float16"
+    }
+  },
+  "registry": {
+    "path": "BALANCED_PROMPT_REGISTRY.json",
+    "sha256": "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c"
+  },
+  "invariants_verified": 11,
+  "status": "GREEN_VALIDATED"
+}

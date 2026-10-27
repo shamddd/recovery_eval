@@ -1,0 +1,63 @@
+{
+  "source_file": "research-next/ieee_bigdata_2026/09_genuine_execution_v1/RAW_NEURAL_ROLLOUTS.jsonl",
+  "audit_timestamp": "2026-10-24T12:23:40Z",
+  "total_records": 400,
+  "unique_rollout_ids": 400,
+  "unique_problems": 20,
+  "models": [
+    "Qwen/Qwen2.5-Math-1.5B",
+    "Qwen/Qwen2.5-Math-1.5B-Instruct"
+  ],
+  "conditions": [
+    "CONTROL",
+    "RECOVERY"
+  ],
+  "seeds": [
+    401,
+    402,
+    403,
+    404,
+    405
+  ],
+  "generation_parameters": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "max_new_tokens": 64,
+    "do_sample": true
+  },
+  "four_cell_accuracy": {
+    "Base_CONTROL": {
+      "successes": 38,
+      "total": 100,
+      "rate": 0.3800
+    },
+    "Base_RECOVERY": {
+      "successes": 21,
+      "total": 100,
+      "rate": 0.2100
+    },
+    "Instruct_CONTROL": {
+      "successes": 92,
+      "total": 100,
+      "rate": 0.9200
+    },
+    "Instruct_RECOVERY": {
+      "successes": 64,
+      "total": 100,
+      "rate": 0.6400
+    }
+  },
+  "interaction_contrast_D1": -0.1100,
+  "truncation_statistics": {
+    "total_truncated": 212,
+    "total_nontruncated": 188,
+    "truncation_rate_overall": 0.5300,
+    "by_cell": {
+      "Base_CONTROL": 0.7400,
+      "Base_RECOVERY": 0.8300,
+      "Instruct_CONTROL": 0.1200,
+      "Instruct_RECOVERY": 0.4300
+    }
+  },
+  "independent_reconstruction_status": "EXACT_MATCH"
+}

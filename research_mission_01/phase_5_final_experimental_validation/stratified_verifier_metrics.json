@@ -1,0 +1,140 @@
+{
+  "strata": {
+    "Qwen2.5-Math-1.5B|CONTROL|V=0": {
+      "Nh": 62,
+      "nh": 13,
+      "ph": 0.20967741935483872,
+      "wh": 4.769230769230769
+    },
+    "Qwen2.5-Math-1.5B|CONTROL|V=1": {
+      "Nh": 38,
+      "nh": 12,
+      "ph": 0.3157894736842105,
+      "wh": 3.1666666666666665
+    },
+    "Qwen2.5-Math-1.5B|RECOVERY|V=0": {
+      "Nh": 79,
+      "nh": 15,
+      "ph": 0.189873417721519,
+      "wh": 5.266666666666667
+    },
+    "Qwen2.5-Math-1.5B|RECOVERY|V=1": {
+      "Nh": 21,
+      "nh": 10,
+      "ph": 0.47619047619047616,
+      "wh": 2.1
+    },
+    "Qwen2.5-Math-1.5B-Instruct|CONTROL|V=0": {
+      "Nh": 8,
+      "nh": 5,
+      "ph": 0.625,
+      "wh": 1.6
+    },
+    "Qwen2.5-Math-1.5B-Instruct|CONTROL|V=1": {
+      "Nh": 92,
+      "nh": 20,
+      "ph": 0.21739130434782608,
+      "wh": 4.6
+    },
+    "Qwen2.5-Math-1.5B-Instruct|RECOVERY|V=0": {
+      "Nh": 36,
+      "nh": 10,
+      "ph": 0.2777777777777778,
+      "wh": 3.6
+    },
+    "Qwen2.5-Math-1.5B-Instruct|RECOVERY|V=1": {
+      "Nh": 64,
+      "nh": 15,
+      "ph": 0.234375,
+      "wh": 4.266666666666667
+    }
+  },
+  "weighted_counts": {
+    "TP": 215.0,
+    "FP": 0.0,
+    "FN": 84.09230769230768,
+    "TN": 100.90769230769232,
+    "Total": 400.0
+  },
+  "unweighted_counts": {
+    "TP": 57,
+    "FP": 0,
+    "FN": 19,
+    "TN": 24,
+    "Total": 100
+  },
+  "metrics": {
+    "Overall Precision": {
+      "unweighted": 1.0,
+      "weighted": 1.0,
+      "std_error": 0.0,
+      "ci_95": [
+        1.0,
+        1.0
+      ]
+    },
+    "Overall Recall": {
+      "unweighted": 0.75,
+      "weighted": 0.7188,
+      "std_error": 0.0277,
+      "ci_95": [
+        0.6645,
+        0.7732
+      ]
+    },
+    "Overall False Positive Rate": {
+      "unweighted": 0.0,
+      "weighted": 0.0,
+      "std_error": 0.0,
+      "ci_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "Overall False Negative Rate": {
+      "unweighted": 0.25,
+      "weighted": 0.2812,
+      "std_error": 0.0277,
+      "ci_95": [
+        0.2268,
+        0.3355
+      ]
+    },
+    "Base-Model Recall": {
+      "unweighted": 0.5789,
+      "weighted": 0.4266,
+      "std_error": 0.0354,
+      "ci_95": [
+        0.3573,
+        0.496
+      ]
+    },
+    "Instruct-Model Recall": {
+      "unweighted": 0.9211,
+      "weighted": 0.9701,
+      "std_error": 0.0072,
+      "ci_95": [
+        0.956,
+        0.9843
+      ]
+    },
+    "Control-Condition Recall": {
+      "unweighted": 0.7111,
+      "weighted": 0.7124,
+      "std_error": 0.0266,
+      "ci_95": [
+        0.6603,
+        0.7645
+      ]
+    },
+    "Recovery-Condition Recall": {
+      "unweighted": 0.8065,
+      "weighted": 0.729,
+      "std_error": 0.0582,
+      "ci_95": [
+        0.6149,
+        0.8431
+      ]
+    }
+  }
+}

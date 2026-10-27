@@ -1,0 +1,80 @@
+{
+  "metrics_phase_a": {
+    "n_problems": 20,
+    "n_rollouts": 400,
+    "conditions": [
+      "CONTROL",
+      "RECOVERY"
+    ],
+    "models": [
+      "Qwen/Qwen2.5-Math-1.5B",
+      "Qwen/Qwen2.5-Math-1.5B-Instruct"
+    ],
+    "base_control_acc": 0.38,
+    "base_recovery_acc": 0.21,
+    "instruct_control_acc": 0.92,
+    "instruct_recovery_acc": 0.64,
+    "interaction_contrast": -0.10999999999999999,
+    "overall_truncation_rate": 0.53,
+    "truncation_by_cell": {
+      "('Base', 'RECOVERY')": 0.83,
+      "('Instruct', 'CONTROL')": 0.12,
+      "('Base', 'CONTROL')": 0.74,
+      "('Instruct', 'RECOVERY')": 0.43
+    },
+    "overall_verifier_failure_rate": 0.4625
+  },
+  "bootstrap_results": {
+    "42": {
+      "mean": -0.11126199999999999,
+      "se": 0.06954989112859918,
+      "ci_95": [
+        -0.24,
+        0.02999999999999997
+      ],
+      "p_val": 0.1208
+    },
+    "123": {
+      "mean": -0.11023600000000001,
+      "se": 0.06931323325310974,
+      "ci_95": [
+        -0.23999999999999994,
+        0.030000000000000027
+      ],
+      "p_val": 0.1218
+    },
+    "2026": {
+      "mean": -0.11001999999999998,
+      "se": 0.07006539516765747,
+      "ci_95": [
+        -0.24,
+        0.030000000000000027
+      ],
+      "p_val": 0.1374
+    },
+    "9999": {
+      "mean": -0.109043,
+      "se": 0.06979179142993823,
+      "ci_95": [
+        -0.24,
+        0.030000000000000027
+      ],
+      "p_val": 0.1324
+    },
+    "54321": {
+      "mean": -0.110346,
+      "se": 0.06975270807646108,
+      "ci_95": [
+        -0.24,
+        0.030000000000000027
+      ],
+      "p_val": 0.1278
+    }
+  },
+  "parametric_tests": {
+    "t_stat": -1.5324211584096499,
+    "p_val_t": 0.14190061088020733,
+    "wilcoxon_stat": 66.0,
+    "p_val_wilcoxon": 0.14462777334430976
+  }
+}

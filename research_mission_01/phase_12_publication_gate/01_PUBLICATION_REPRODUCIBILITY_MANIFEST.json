@@ -1,0 +1,53 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "audit_timestamp_iso": "2026-10-26T18:40:00Z",
+  "repository": "recovery_eval",
+  "git_branch": "research/recovery-eval-phase12-publication-gate",
+  "git_commit": "3cbbb7416b51c82ac62bc2665e33eea9fa371904",
+  "raw_dataset": {
+    "path": "research_mission_01/phase_10_runpod_execution/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl",
+    "record_count": 400,
+    "sha256": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+    "sha256_verified": true
+  },
+  "frozen_prompt_registry": {
+    "path": "research_mission_01/phase_10_runpod_execution/final_runpod_package/BALANCED_PROMPT_REGISTRY.json",
+    "sha256": "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c"
+  },
+  "statistical_script": {
+    "path": "research_mission_01/phase_11_scientific_falsification/reproducibility_package/reproduce_protocol2_statistics.py",
+    "sha256": "d84894b86775610f8a822706e1e6860cbb0c5f4c2b114d83f066f3ebce4c2d5e"
+  },
+  "manuscript_source": {
+    "path": "submission_mlbd2026/main.tex",
+    "sha256": "cc74f9970cd73d2b798164d0fe2217132b2087edbd03b38d5d655098568f890f"
+  },
+  "execution_environment": {
+    "python_version": "Python 3.13.9",
+    "platform": "Darwin 27.0.0 arm64",
+    "compiler": "Tectonic 0.17.0"
+  },
+  "factorial_verification": {
+    "total_rollouts": 400,
+    "unique_factorial_keys": 400,
+    "models": {
+      "Qwen/Qwen2.5-Math-1.5B": 200,
+      "Qwen/Qwen2.5-Math-1.5B-Instruct": 200
+    },
+    "conditions": {
+      "CONTROL": 200,
+      "RECOVERY": 200
+    },
+    "seeds": {
+      "401": 80,
+      "402": 80,
+      "403": 80,
+      "404": 80,
+      "405": 80
+    },
+    "problems_count": 20,
+    "truncation_count": 0,
+    "eos_hit_count": 400
+  },
+  "status": "FREEZE_CONFIRMED"
+}

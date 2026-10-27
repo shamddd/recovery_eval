@@ -1,0 +1,41 @@
+{
+  "archive_extraction": {
+    "status": "PASS",
+    "extracted_to": "/var/folders/fx/yk7jd8g903v4kccjqt2qzy5r0000gn/T/tmpjc9nk5_c"
+  },
+  "directory_structure": {
+    "status": "PASS",
+    "present_count": 9,
+    "missing": []
+  },
+  "python_syntax_compilation": {
+    "status": "PASS",
+    "checked_files": [
+      "reproduce_protocol2_statistics.py",
+      "validate_completed_dataset.py",
+      "run_protocol2_experiment.py"
+    ]
+  },
+  "registry_discovery_and_hash": {
+    "status": "PASS",
+    "hash": "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c"
+  },
+  "cli_argument_parsing": {
+    "status": "PASS",
+    "help_output_snippet": "usage: run_protocol2_experiment.py [-h] [--registry REGISTRY]\n                                   [--output OUTPUT] [--device DEVICE]\n                 "
+  },
+  "dependency_manifest": {
+    "status": "PASS",
+    "packages": [
+      "torch>=2.4.0",
+      "transformers>=4.45.0",
+      "accelerate>=0.34.0",
+      "safetensors>=0.4.5",
+      "scipy>=1.13.0",
+      "numpy>=1.26.0"
+    ]
+  },
+  "dataset_validator_cli": {
+    "status": "PASS"
+  }
+}

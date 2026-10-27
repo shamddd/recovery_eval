@@ -1,0 +1,102 @@
+{
+  "1_exact_model_id_validation": {
+    "status": "PASS",
+    "details": "Models: ['Qwen/Qwen2.5-Math-1.5B', 'Qwen/Qwen2.5-Math-1.5B-Instruct']"
+  },
+  "2_exact_model_revision_validation": {
+    "status": "PASS",
+    "details": "Revisions: ['4a83ca6e4526a4f2da3aa259ec36c259f66b2ab2', 'aafeb0fc6f22cbf0eaeed126eff8be45b0360a35']"
+  },
+  "3_model_config_mismatch_detection": {
+    "status": "PASS",
+    "details": "Surrogate model rejected"
+  },
+  "4_frozen_registry_checksum_validation": {
+    "status": "PASS",
+    "details": "Hash: d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c"
+  },
+  "5_missing_prompt_detection": {
+    "status": "PASS",
+    "details": "Missing prompt keys correctly identified"
+  },
+  "6_duplicate_rollout_prevention": {
+    "status": "PASS",
+    "details": "Deduplicated set size: 1"
+  },
+  "7_correct_seed_assignment": {
+    "status": "PASS",
+    "details": "Seeds: [401, 402, 403, 404, 405]"
+  },
+  "8_correct_temperature": {
+    "status": "PASS",
+    "details": "Temperature: 0.7"
+  },
+  "9_correct_top_p": {
+    "status": "PASS",
+    "details": "top_p: 0.9"
+  },
+  "10_correct_generation_budget": {
+    "status": "PASS",
+    "details": "max_new_tokens: 256"
+  },
+  "11_prompt_token_exclusion": {
+    "status": "PASS",
+    "details": "Slicing logic out[0][in_len:] verified"
+  },
+  "12_eos_handling": {
+    "status": "PASS",
+    "details": "EOS terminal detection verified"
+  },
+  "13_truncation_detection": {
+    "status": "PASS",
+    "details": "Truncation boundary logic verified"
+  },
+  "14_interrupted_execution_recovery": {
+    "status": "PASS",
+    "details": "Recovered existing keys"
+  },
+  "15_partially_written_jsonl_recovery": {
+    "status": "PASS",
+    "details": "Ignored partial trailing line safely"
+  },
+  "16_corrupted_record_detection": {
+    "status": "PASS",
+    "details": "Corrupted line skipped"
+  },
+  "17_missing_output_metadata_detection": {
+    "status": "PASS",
+    "details": "Schema completeness verified"
+  },
+  "18_wrong_checkpoint_rejection": {
+    "status": "PASS",
+    "details": "Invalid revision safely rejected"
+  },
+  "19_wrong_precision_reporting": {
+    "status": "PASS",
+    "details": "Precision mapping verified"
+  },
+  "20_cuda_device_reporting": {
+    "status": "PASS",
+    "details": "Device string validation passed"
+  },
+  "21_incremental_persistence": {
+    "status": "PASS",
+    "details": "Incremental unbuffered write verified"
+  },
+  "22_resume_without_overwriting": {
+    "status": "PASS",
+    "details": "Append resume verified"
+  },
+  "23_dataset_checksum_generation": {
+    "status": "PASS",
+    "details": "Checksum generated: 611a65694799940024503bd4147570a2ecb8ae33f2b76be512f20999dcd11b81"
+  },
+  "24_complete_400_key_matrix": {
+    "status": "PASS",
+    "details": "Matrix keys count: 400"
+  },
+  "25_graceful_shutdown_after_interruption": {
+    "status": "PASS",
+    "details": "Finally block cleanup guaranteed"
+  }
+}

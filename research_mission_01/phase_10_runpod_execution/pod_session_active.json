@@ -1,0 +1,20 @@
+{
+  "pod_id": "7i1502d0cuh5kk",
+  "created_at_epoch": 1793001210.006704,
+  "created_at_iso": "2026-10-26T07:53:30Z",
+  "hourly_rate": 0.34,
+  "config": {
+    "id": "7i1502d0cuh5kk",
+    "imageName": "runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04",
+    "env": [
+      "RUNPOD_API_KEY=REDACTED_REVOKED",
+      "PUBLIC_KEY=REDACTED_SSH_KEY"
+    ],
+    "machineId": "2uv1z39ibves",
+    "machine": {
+      "podHostId": "7i1502d0cuh5kk-644124eb"
+    }
+  },
+  "ssh_ip": null,
+  "ssh_port": null
+}

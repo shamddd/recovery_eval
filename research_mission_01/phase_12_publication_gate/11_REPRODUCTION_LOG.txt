@@ -1,0 +1,34 @@
+Dataset SHA-256: b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15
+Checksum Valid: True
+
+Total parsed records: 400
+============================================================
+REGIME: Heuristic MathVerifier
+============================================================
+Base Control (p_BC):       0.9700
+Base Recovery (p_BR):      0.0000
+Instruct Control (p_IC):   1.0000
+Instruct Recovery (p_IR):  0.0000
+------------------------------------------------------------
+Interaction Contrast (D):  -0.0300
+Cluster-Robust SE:         0.0164
+95% Confidence Interval:   [-0.0643, 0.0043]
+Student-t Statistic:       -1.8311 (df = 19)
+Two-Sided p-value:         0.0828
+============================================================
+
+============================================================
+REGIME: Structural / Semantic Verifier
+============================================================
+Base Control (p_BC):       1.0000
+Base Recovery (p_BR):      0.0000
+Instruct Control (p_IC):   1.0000
+Instruct Recovery (p_IR):  0.0000
+------------------------------------------------------------
+Interaction Contrast (D):  0.0000
+Cluster-Robust SE:         0.0000
+95% Confidence Interval:   [0.0000, 0.0000]
+Student-t Statistic:       0.0000 (df = 19)
+Two-Sided p-value:         1.0000
+============================================================
+

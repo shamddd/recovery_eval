@@ -1,0 +1,30 @@
+{
+  "protocol": "2.0-pcppe",
+  "project": "recovery_eval",
+  "models": [
+    {
+      "model_id": "Qwen/Qwen2.5-Math-1.5B",
+      "model_type": "base",
+      "revision": "4a83ca6e4526a4f2da3aa259ec36c259f66b2ab2",
+      "weights_file": "model.safetensors",
+      "weights_sha256": "f7aa8d665ab44d3b461bed742fe93cdcedc15d2e31e50dc372c126e6f720857b",
+      "target_rollouts": 200
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-Math-1.5B-Instruct",
+      "model_type": "instruct",
+      "revision": "aafeb0fc6f22cbf0eaeed126eff8be45b0360a35",
+      "weights_file": "model.safetensors",
+      "weights_sha256": "08faf1e921d743a6d96a798533cfec889ca2d5f082e6cbe5f70a5adfc941ee46",
+      "target_rollouts": 200
+    }
+  ],
+  "sampling": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "max_new_tokens": 256,
+    "seeds": [401, 402, 403, 404, 405]
+  },
+  "registry_sha256": "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c",
+  "total_target_rollouts": 400
+}

@@ -1,0 +1,55 @@
+{
+  "phase": "Phase 10: RunPod GPU Execution",
+  "project": "recovery_eval",
+  "platform": {
+    "provider": "RunPod",
+    "authenticated_user_id": "user_3I6YRPDHqf2wE2KnD9pT9cq8iFm",
+    "account_email": "shamthakare3000@gmail.com",
+    "client_balance_usd": 10.0484,
+    "status": "READY_FOR_DEPLOYMENT",
+    "target_gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_gb": 24,
+    "hourly_rate_usd": 0.34,
+    "container_image": "runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04",
+    "container_disk_gb": 25,
+    "volume_disk_gb": 0,
+    "network_volume_attached": false,
+    "start_ssh": true
+  },
+  "package": {
+    "archive": "04_FINAL_VERIFIED_RUNPOD_PACKAGE.zip",
+    "size_bytes": 17678,
+    "sha256": "2a9c6abce48956b98b46c2522e1ead21151b54ce1fb118dec7c55eec6958bbec",
+    "preflight_regression_passed": "38/38",
+    "resume_fault_injection_passed": "9/9"
+  },
+  "planned_experiment": {
+    "protocol": "2.0-pcppe",
+    "models": [
+      {
+        "id": "Qwen/Qwen2.5-Math-1.5B",
+        "type": "base",
+        "revision": "4a83ca6e4526a4f2da3aa259ec36c259f66b2ab2",
+        "target_rollouts": 200
+      },
+      {
+        "id": "Qwen/Qwen2.5-Math-1.5B-Instruct",
+        "type": "instruct",
+        "revision": "aafeb0fc6f22cbf0eaeed126eff8be45b0360a35",
+        "target_rollouts": 200
+      }
+    ],
+    "problems_count": 20,
+    "conditions": ["CONTROL", "RECOVERY"],
+    "seeds": [401, 402, 403, 404, 405],
+    "total_rollouts": 400,
+    "max_new_tokens": 256,
+    "temperature": 0.7,
+    "top_p": 0.9
+  },
+  "financial_guardrails": {
+    "proposed_budget_ceiling_usd": 1.00,
+    "projected_cost_usd": 0.11,
+    "hard_timeout_minutes": 45
+  }
+}

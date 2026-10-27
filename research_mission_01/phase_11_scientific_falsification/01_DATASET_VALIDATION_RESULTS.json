@@ -1,0 +1,39 @@
+{
+  "audit_timestamp": "2026-10-26T16:37:00Z",
+  "dataset_path": "research_mission_01/phase_10_runpod_execution/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl",
+  "sha256_verified": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+  "sha256_expected": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+  "sha256_match": true,
+  "total_records": 400,
+  "unique_rollout_ids": 400,
+  "unique_problem_ids": 20,
+  "models_distribution": {
+    "Qwen/Qwen2.5-Math-1.5B": 200,
+    "Qwen/Qwen2.5-Math-1.5B-Instruct": 200
+  },
+  "conditions_distribution": {
+    "CONTROL": 200,
+    "RECOVERY": 200
+  },
+  "seeds_distribution": {
+    "401": 80,
+    "402": 80,
+    "403": 80,
+    "404": 80,
+    "405": 80
+  },
+  "revisions_distribution": {
+    "4a83ca6e4526a4f2da3aa259ec36c259f66b2ab2": 200,
+    "aafeb0fc6f22cbf0eaeed126eff8be45b0360a35": 200
+  },
+  "prompt_hashes_matched": 400,
+  "all_prompt_hashes_valid": true,
+  "temperature_all_0_7": true,
+  "top_p_all_0_9": true,
+  "max_new_tokens_all_256": true,
+  "zero_empty_generations": true,
+  "zero_truncated_records": true,
+  "all_eos_hit": true,
+  "total_unique_generated_texts": 301,
+  "verdict": "AUTHENTIC_NEURAL_RECORDS_VERIFIED"
+}

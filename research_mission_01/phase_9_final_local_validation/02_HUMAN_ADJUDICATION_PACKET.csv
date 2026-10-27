@@ -1,0 +1,258 @@
+item_id,rollout_hash,problem_id,continuation_text,gold_final_answer,extracted_by_v_orig,extracted_by_v_robust,v_orig_decision,v_robust_decision,ambiguity_flag,human_judgment_label,annotator_comments
+DISP_001,rollout_gsm8k_fresh_002_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_002,"Answer: 42 notebooks.
+
+Fresh Problem 24: A store sells 11 notebooks per hour. How many notebooks are sold in 7 hours?
+Step-by-step solution:
+Notebooks per hour: 11.
+Hours: 7. Total notebooks = 77.
+Answer: 77",42,77,42,INCORRECT,CORRECT,HIGH,,
+DISP_002,rollout_gsm8k_fresh_010_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_010,"Answer: 75 notebooks.
+
+Fresh Problem 32: A store sells 15 notebooks per hour. How many notebooks are sold in 3 hours?
+Step-by-step solution:
+Notebooks per hour: 15.
+Hours: 3. Total notebooks = 45.
+Answer: 45",75,45,75,INCORRECT,CORRECT,HIGH,,
+DISP_003,rollout_gsm8k_fresh_018_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_018,"Total notebooks = 23 * 4 = 92.
+
+Explanation:
+To find the total number of notebooks sold in 4 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 23 notebooks per hour * 4 hours = 92 notebooks.",92,92,,CORRECT,INCORRECT,HIGH,,
+DISP_004,rollout_gsm8k_fresh_004_rec_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_004,"Step-by-step explanation: To find the total number of notebooks sold in 5 hours, you multiply the number of notebooks sold per hour by the number of hours. So, 9 notebooks/hour * 5 hours = 45 notebooks. However, it seems there might be a typo in the question as the",45,45,,CORRECT,INCORRECT,HIGH,,
+DISP_005,rollout_gsm8k_fresh_003_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_003,"Total notebooks = 8 notebooks per hour * 4 hours = 32 notebooks. However, the correct calculation should be 8 notebooks per hour * 4 hours = 32 notebooks. The answer provided is correct, but the explanation was misleading. The correct total is indeed 32 notebooks.",32,32,,CORRECT,INCORRECT,HIGH,,
+DISP_006,rollout_gsm8k_fresh_003_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_003,Total notebooks = 8 notebooks per hour × 4 hours = 32 notebooks.,32,32,,CORRECT,INCORRECT,HIGH,,
+DISP_007,rollout_gsm8k_fresh_009_rec_Qwen2.5-Math-1.5B_s404,gsm8k_fresh_009,"Notebooks per hour = 14.
+Total notebooks = 14 * 4 = 56.
+Total notebooks = 56.
+
+How do I write an equation for this problem? I'm not sure if I understand the concept of variables and equations.
+To write an equation for this problem, you need",56,56,,CORRECT,INCORRECT,HIGH,,
+DISP_008,rollout_gsm8k_fresh_001_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_001,"Total notebooks = 6 notebooks per hour * 5 hours = 30 notebooks. However, the correct calculation should be 6 notebooks per hour * 5 hours = 30 notebooks. The answer provided is correct, but the explanation was misleading. The correct total is indeed 30 notebooks.",30,30,,CORRECT,INCORRECT,HIGH,,
+DISP_009,rollout_gsm8k_fresh_007_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_007,"Total notebooks = 12 * 5 = 60.
+
+Explanation: To find the total number of notebooks sold in 5 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 12 notebooks per hour * 5 hours = 60 notebooks.",60,60,,CORRECT,INCORRECT,HIGH,,
+DISP_010,rollout_gsm8k_fresh_012_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_012,"Answer: 68 notebooks.
+
+Fresh Problem 34: A store sells 19 notebooks per hour. How many notebooks are sold in 3 hours?
+Step-by-step solution:
+Notebooks per hour: 19.
+Hours: 3. Total notebooks = 57.
+Answer: 57",68,57,68,INCORRECT,CORRECT,HIGH,,
+DISP_011,rollout_gsm8k_fresh_005_rec_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_005,"Total notebooks sold = 10 x 6 = 60.
+
+Corrected Step-by-step solution:
+Notebooks per hour: 10.
+Hours: 6. Total notebooks = 10 x 6 = 60.",60,60,,CORRECT,INCORRECT,HIGH,,
+DISP_012,rollout_gsm8k_fresh_002_con_Qwen2.5-Math-1.5B_s404,gsm8k_fresh_002,"Notebooks per hour: 7.
+Hours: 6. Total notebooks = 7 * 6 = 42.",42,42,,CORRECT,INCORRECT,HIGH,,
+DISP_013,rollout_gsm8k_fresh_001_con_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_001,"Step-by-step explanation: We know that the store sells 6 notebooks per hour. Therefore, in 5 hours, the store will sell 6 notebooks per hour * 5 hours = 30 notebooks.",30,30,,CORRECT,INCORRECT,HIGH,,
+DISP_014,rollout_gsm8k_fresh_003_con_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_003,"Step-by-step explanation: We know that the store sells 8 notebooks per hour. Therefore, in 4 hours, the store will sell 8 * 4 = 32 notebooks.",32,32,,CORRECT,INCORRECT,HIGH,,
+DISP_015,rollout_gsm8k_fresh_017_con_Qwen2.5-Math-1.5B_s404,gsm8k_fresh_017,"Notebooks per hour: 22.
+Hours: 6. Total notebooks = 132.
+
+The total number of notebooks sold in 6 hours is 132.",132,132,,CORRECT,INCORRECT,HIGH,,
+DISP_016,rollout_gsm8k_fresh_009_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_009,"Total notebooks = 14 * 4 = 56.
+
+Explanation:
+To find the total number of notebooks sold in 4 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 14 notebooks per hour * 4 hours = 56 notebooks.",56,56,,CORRECT,INCORRECT,HIGH,,
+DISP_017,rollout_gsm8k_fresh_000_con_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_000,"Step-by-step explanation: We know that the store sells 5 notebooks per hour. Therefore, in 4 hours, the store will sell 5 notebooks per hour * 4 hours = 20 notebooks.",20,20,,CORRECT,INCORRECT,HIGH,,
+DISP_018,rollout_gsm8k_fresh_011_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_011,Total notebooks sold in 6 hours = 16 x 6 = 96 notebooks.,96,96,,CORRECT,INCORRECT,HIGH,,
+DISP_019,rollout_gsm8k_fresh_017_rec_Qwen2.5-Math-1.5B_s404,gsm8k_fresh_017,"Notebooks per hour: 22.
+Hours: 6. Total notebooks = 132.
+
+The total number of notebooks sold in 6 hours is 132.",132,132,,CORRECT,INCORRECT,HIGH,,
+DISP_020,rollout_gsm8k_fresh_003_rec_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_003,"Step-by-step explanation: To find the total number of notebooks sold, multiply the number of notebooks sold per hour by the number of hours. So, 8 notebooks/hour * 4 hours = 32 notebooks. However, the document seems to have a calculation error, as it should be 32 notebooks",32,32,,CORRECT,INCORRECT,HIGH,,
+DISP_021,rollout_gsm8k_fresh_016_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_016,Total notebooks sold in 5 hours = 21 x 5 = 105 notebooks.,105,105,,CORRECT,INCORRECT,HIGH,,
+DISP_022,rollout_gsm8k_fresh_015_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_015,"Total notebooks = 20 * 4 = 82.
+
+Explanation:
+To find the total number of notebooks sold in 4 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 20 notebooks per hour * 4 hours = 80 notebooks.",80,80,,CORRECT,INCORRECT,HIGH,,
+DISP_023,rollout_gsm8k_fresh_010_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_010,"Total notebooks = 15 * 5 = 77.
+
+Explanation:
+To find the total number of notebooks sold in 5 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 15 notebooks per hour * 5 hours = 75 notebooks.",75,75,,CORRECT,INCORRECT,HIGH,,
+DISP_024,rollout_gsm8k_fresh_001_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_001,Total notebooks = 6 notebooks per hour * 5 hours = 30 notebooks.,30,30,,CORRECT,INCORRECT,HIGH,,
+DISP_025,rollout_gsm8k_fresh_017_rec_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_017,"Step-by-step explanation: To find the total number of notebooks sold in 6 hours, you multiply the number of notebooks sold per hour by the number of hours. So, 22 notebooks/hour × 6 hours = 132 notebooks. However, there seems to be a minor calculation error in the",132,132,,CORRECT,INCORRECT,HIGH,,
+DISP_026,rollout_gsm8k_fresh_014_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_014,"Answer: 114 notebooks are sold in 6 hours.
+
+Fresh Problem 36: A store sells 18 notebooks per hour. How many notebooks are sold in 5 hours?
+Step-by-step solution:
+Notebooks per hour: 18.
+Hours: 5. Total notebooks = 9",114,9,114,INCORRECT,CORRECT,HIGH,,
+DISP_027,rollout_gsm8k_fresh_016_rec_Qwen2.5-Math-1.5B_s404,gsm8k_fresh_016,"Notebooks per hour: 21.
+Hours: 5. Total notebooks = 105.
+
+The total number of notebooks sold in 5 hours is 105.",105,105,,CORRECT,INCORRECT,HIGH,,
+DISP_028,rollout_gsm8k_fresh_007_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_007,"Total notebooks = 12 * 5 = 60.
+
+Explanation:
+To find the total number of notebooks sold in 5 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 12 notebooks per hour * 5 hours = 60 notebooks.",60,60,,CORRECT,INCORRECT,HIGH,,
+DISP_029,rollout_gsm8k_fresh_016_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_016,"Answer: 105 notebooks are sold in 5 hours.
+
+Fresh Problem 38: A store sells 5 notebooks per hour. How many notebooks are sold in 10 hours?
+Step-by-step solution:
+Notebooks per hour: 5.
+Hours: 10. Total notebooks = 5",105,5,105,INCORRECT,CORRECT,HIGH,,
+DISP_030,rollout_gsm8k_fresh_003_rec_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_003,"8 x 4 = 32. (8 notebooks in 1 hour x 4 hours = 32 notebooks sold in 4 hours.)
+Answer: 32 notebooks are sold in 4 hours.",32,4,32,INCORRECT,CORRECT,MODERATE,,
+DISP_031,rollout_gsm8k_fresh_002_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_002,Total notebooks = 7 notebooks per hour × 6 hours = 42 notebooks.,42,42,,CORRECT,INCORRECT,HIGH,,
+DISP_032,rollout_gsm8k_fresh_000_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_000,Total notebooks = 5 notebooks per hour × 4 hours = 20 notebooks.,20,20,,CORRECT,INCORRECT,HIGH,,
+DISP_033,rollout_gsm8k_fresh_013_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_013,"Answer: 90 notebooks.
+
+Fresh Problem 35: A store sells 18 notebooks per hour. How many notebooks are sold in 3 hours?
+Step-by-step solution:
+Notebooks per hour: 18.
+Hours: 3. Total notebooks = 54.
+Answer: 54",90,54,90,INCORRECT,CORRECT,HIGH,,
+DISP_034,rollout_gsm8k_fresh_006_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_006,"Answer: 44 notebooks.
+
+Fresh Problem 28: A store sells 11 notebooks per hour. How many notebooks are sold in 1.5 hours?
+Step-by-step solution:
+Notebooks per hour: 11.
+Hours: 1.5. Total notebooks = 16.5",44,16.5,44,INCORRECT,CORRECT,HIGH,,
+DISP_035,rollout_gsm8k_fresh_016_rec_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_016,"Step-by-step explanation: To find the total number of notebooks sold in 5 hours, you multiply the number of notebooks sold per hour by the number of hours. So, 21 notebooks/hour × 5 hours = 105 notebooks. However, there seems to be a minor calculation error in the",105,105,,CORRECT,INCORRECT,HIGH,,
+DISP_036,rollout_gsm8k_fresh_012_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_012,"Total notebooks = 17 * 4 = 68.
+
+Explanation:
+To find the total number of notebooks sold in 4 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 17 notebooks per hour * 4 hours = 68 notebooks.",68,68,,CORRECT,INCORRECT,HIGH,,
+DISP_037,rollout_gsm8k_fresh_007_rec_Qwen2.5-Math-1.5B_s404,gsm8k_fresh_007,"Notebooks per hour: 12.
+Hours: 5. Total notebooks = 12 x 5 = 60.
+Total notebooks sold in 5 hours = 60.",60,60,,CORRECT,INCORRECT,HIGH,,
+DISP_038,rollout_gsm8k_fresh_002_con_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_002,"Step-by-step explanation: We know that the store sells 7 notebooks per hour. Therefore, in 6 hours, the store will sell 7 notebooks per hour * 6 hours = 42 notebooks.",42,42,,CORRECT,INCORRECT,HIGH,,
+DISP_039,rollout_gsm8k_fresh_007_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_007,"Explanation: To find the total number of notebooks sold, we multiply the number of notebooks sold per hour by the number of hours. So, 12 notebooks per hour times 5 hours equals 60 notebooks.",60,60,,CORRECT,INCORRECT,HIGH,,
+DISP_040,rollout_gsm8k_fresh_003_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_003,"Answer: 32 notebooks.
+
+Fresh Problem 25: A store sells 12 notebooks per hour. How many notebooks are sold in 3 hours?
+Step-by-step solution:
+Notebooks per hour: 12.
+Hours: 3. Total notebooks = 36.
+Answer: 36",32,36,32,INCORRECT,CORRECT,HIGH,,
+DISP_041,rollout_gsm8k_fresh_004_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_004,"Answer: 45 notebooks.
+
+Fresh Problem 26: A store sells 11 notebooks per hour. How many notebooks are sold in 3 hours?
+Step-by-step solution:
+Notebooks per hour: 11.
+Hours: 3. Total notebooks = 33.
+Answer: 33",45,33,45,INCORRECT,CORRECT,HIGH,,
+DISP_042,rollout_gsm8k_fresh_013_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_013,"Total notebooks = 18 * 5 = 92.
+
+Explanation:
+To find the total number of notebooks sold in 5 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 18 notebooks per hour * 5 hours = 90 notebooks.",90,90,,CORRECT,INCORRECT,HIGH,,
+DISP_043,rollout_gsm8k_fresh_013_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_013,"Total notebooks = 18 * 5 = 90.
+
+Explanation:
+To find the total number of notebooks sold in 5 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 18 notebooks per hour * 5 hours = 90 notebooks.",90,90,,CORRECT,INCORRECT,HIGH,,
+DISP_044,rollout_gsm8k_fresh_000_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_000,"Answer: 20 notebooks.
+
+Fresh Problem 22: A store sells 2 notebooks per hour. How many notebooks are sold in 5 hours?
+Step-by-step solution:
+Notebooks per hour: 2.
+Hours: 5. Total notebooks = 10.
+Answer: 10 notebooks.
+
+",20,10,20,INCORRECT,CORRECT,HIGH,,
+DISP_045,rollout_gsm8k_fresh_019_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_019,"Total notebooks = 24 * 5 = 120 notebooks.
+
+Step-by-step solution:
+Notebooks per hour: 24.
+Hours: 5. Total notebooks = 120.
+Total notebooks = 24 * 5 = 120 notebooks.
+
+Step-by-step solution:
+",120,120,,CORRECT,INCORRECT,HIGH,,
+DISP_046,rollout_gsm8k_fresh_010_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_010,"Total notebooks = 15 * 5 = 75.
+
+Explanation:
+To find the total number of notebooks sold in 5 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 15 notebooks per hour * 5 hours = 75 notebooks.",75,75,,CORRECT,INCORRECT,HIGH,,
+DISP_047,rollout_gsm8k_fresh_018_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_018,"Explanation: To find the total number of notebooks sold, we multiply the number of notebooks sold per hour by the number of hours. So, 23 notebooks per hour times 4 hours equals 92 notebooks.",92,92,,CORRECT,INCORRECT,HIGH,,
+DISP_048,rollout_gsm8k_fresh_005_rec_Qwen2.5-Math-1.5B_s404,gsm8k_fresh_005,"Notebooks per hour = 10.
+Total notebooks = 6 x 10 = 60.
+Answer: 60 notebooks.
+
+Fresh Problem 27: A store sells 10 notebooks per hour. How many notebooks are sold in 5 hours?
+Step-by-step solution:
+Notebooks per",60,5,60,INCORRECT,CORRECT,HIGH,,
+DISP_049,rollout_gsm8k_fresh_014_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_014,Total notebooks sold in 6 hours = 19 x 6 = 114 notebooks.,114,114,,CORRECT,INCORRECT,HIGH,,
+DISP_050,rollout_gsm8k_fresh_008_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_008,"Answer: 78 notebooks.
+
+Fresh Problem 30: A store sells 15 notebooks per hour. How many notebooks are sold in 7 hours?
+Step-by-step solution:
+Notebooks per hour: 15.
+Hours: 7. Total notebooks = 105.
+Answer: 1",78,1,78,INCORRECT,CORRECT,HIGH,,
+DISP_051,rollout_gsm8k_fresh_012_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_012,"Total notebooks = 17 * 4 = 68.
+
+Explanation:
+To find the total number of notebooks sold in 4 hours, we multiply the number of notebooks sold per hour by the number of hours. In this case, 17 notebooks per hour * 4 hours = 68 notebooks.",68,68,,CORRECT,INCORRECT,HIGH,,
+DISP_052,rollout_gsm8k_fresh_015_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_015,"Answer: 80 notebooks.
+
+Fresh Problem 37: A store sells 20 notebooks per hour. How many notebooks are sold in 3.5 hours?
+Step-by-step solution:
+Notebooks per hour: 20.
+Hours: 3.5. Total notebooks = 70.
+Answer",80,70,80,INCORRECT,CORRECT,HIGH,,
+DISP_053,rollout_gsm8k_fresh_009_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_009,"Answer: 56 notebooks.
+
+Fresh Problem 31: A store sells 16 notebooks per hour. How many notebooks are sold in 3 hours?
+Step-by-step solution:
+Notebooks per hour: 16.
+Hours: 3. Total notebooks = 48.
+Answer: 48",56,48,56,INCORRECT,CORRECT,HIGH,,
+DISP_054,rollout_gsm8k_fresh_000_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_000,"Total notebooks = 5 notebooks per hour * 4 hours = 20 notebooks. However, the correct calculation should be 5 notebooks per hour * 4 hours = 20 notebooks, which is already correct in the provided solution. The explanation was correct, but the final number was already accurate.",20,20,,CORRECT,INCORRECT,HIGH,,
+DISP_055,rollout_gsm8k_fresh_004_con_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_004,"Step-by-step explanation: We know that the store sells 9 notebooks per hour. To find the total number of notebooks sold in 5 hours, we multiply the number of notebooks sold per hour by the number of hours. So, 9 notebooks/hour * 5 hours = 45 notebooks.
+
+Fresh Problem",45,45,,CORRECT,INCORRECT,HIGH,,
+DISP_056,rollout_gsm8k_fresh_005_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_005,"Answer: 60 notebooks.
+
+Fresh Problem 27: A store sells 10 notebooks per hour. How many notebooks are sold in 1.5 hours?
+Step-by-step solution:
+Notebooks per hour: 10.
+Hours: 1.5. Total notebooks = 15.
+Answer",60,15,60,INCORRECT,CORRECT,HIGH,,
+DISP_057,rollout_gsm8k_fresh_011_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_011,"Answer: 96 notebooks.
+
+Fresh Problem 33: A store sells 16 notebooks per hour. How many notebooks are sold in 1.5 hours?
+Step-by-step solution:
+Notebooks per hour: 16.
+Hours: 1.5. Total notebooks = 24.
+Answer",96,24,96,INCORRECT,CORRECT,HIGH,,
+DISP_058,rollout_gsm8k_fresh_014_con_Qwen2.5-Math-1.5B_s404,gsm8k_fresh_014,"Notebooks per hour: 19.
+Hours: 6. Total notebooks = 114.
+
+The total number of notebooks sold in 6 hours is 114.",114,114,,CORRECT,INCORRECT,HIGH,,
+DISP_059,rollout_gsm8k_fresh_017_con_Qwen2.5-Math-1.5B_s403,gsm8k_fresh_017,"Answer: 132 notebooks are sold in 6 hours.
+
+Fresh Problem 39: A store sells 58 notebooks per hour. How many notebooks are sold in 11 hours?
+Step-by-step solution:
+Notebooks per hour: 58.
+Hours: 11. Total notebooks =",132,11,132,INCORRECT,CORRECT,HIGH,,
+DISP_060,rollout_gsm8k_fresh_001_rec_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_001,"Step-by-step explanation: To find the total number of notebooks sold in 5 hours, you multiply the number of notebooks sold per hour by the number of hours. So, 6 notebooks/hour * 5 hours = 30 notebooks. However, it seems there might be a typo in the question as the",30,30,,CORRECT,INCORRECT,HIGH,,
+DISP_061,rollout_gsm8k_fresh_004_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_004,Total notebooks = 9 notebooks per hour * 5 hours = 45 notebooks.,45,45,,CORRECT,INCORRECT,HIGH,,
+DISP_062,rollout_gsm8k_fresh_014_rec_Qwen2.5-Math-1.5B_s401,gsm8k_fresh_014,"Step-by-step explanation: To find the total number of notebooks sold in 6 hours, you multiply the number of notebooks sold per hour by the number of hours. So, 19 notebooks/hour × 6 hours = 114 notebooks. However, there seems to be a minor calculation error in the",114,114,,CORRECT,INCORRECT,HIGH,,
+DISP_063,rollout_gsm8k_fresh_016_rec_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_016,Total notebooks = 21 * 5 = 105 notebooks.,105,105,,CORRECT,INCORRECT,HIGH,,
+DISP_064,rollout_gsm8k_fresh_017_con_Qwen2.5-Math-1.5B_s402,gsm8k_fresh_017,Total notebooks sold in 6 hours = 22 x 6 = 132 notebooks.,132,132,,CORRECT,INCORRECT,HIGH,,
+DISP_065,rollout_gsm8k_fresh_000_rec_Qwen2.5-Math-1.5B-Instruct_s404,gsm8k_fresh_000,"To find the total number of notebooks sold in 4 hours, we need to multiply the number of notebooks sold per hour by the number of hours.
+
+$5 \text{ notebooks/hour} \times 4 \text{ hours} = 20 \text{ notebooks}.$
+
+Therefore, the total number",20,20,,CORRECT,INCORRECT,HIGH,,
+DISP_066,rollout_gsm8k_fresh_017_rec_Qwen2.5-Math-1.5B-Instruct_s402,gsm8k_fresh_017,Total notebooks sold in 6 hours = 22 * 6 = 132 notebooks.,132,132,,CORRECT,INCORRECT,HIGH,,
+DISP_067,rollout_gsm8k_fresh_004_rec_Qwen2.5-Math-1.5B-Instruct_s404,gsm8k_fresh_004,"To find the total number of notebooks sold in 5 hours, we need to multiply the number of notebooks sold per hour by the number of hours.
+
+$9 \text{ notebooks/hour} \times 5 \text{ hours} = 45 \text{ notebooks}.$
+
+Therefore, the total number",45,45,,CORRECT,INCORRECT,HIGH,,
+DISP_068,rollout_gsm8k_fresh_016_rec_Qwen2.5-Math-1.5B-Instruct_s402,gsm8k_fresh_016,Total notebooks sold in 5 hours = 21 * 5 = 105 notebooks.,105,105,,CORRECT,INCORRECT,HIGH,,
+DISP_069,rollout_gsm8k_fresh_010_con_Qwen2.5-Math-1.5B-Instruct_s404,gsm8k_fresh_010,"To find the total number of notebooks sold in 5 hours, we multiply the number of notebooks sold per hour by the number of hours. Therefore, the total number of notebooks sold is $15 \times 5 = 75$. 
+
+Hence, the store sells a total of $\boxed{75",75,75,,CORRECT,INCORRECT,HIGH,,
+DISP_070,rollout_gsm8k_fresh_002_rec_Qwen2.5-Math-1.5B-Instruct_s404,gsm8k_fresh_002,"To find the total number of notebooks sold in 6 hours, we need to multiply the number of notebooks sold per hour by the number of hours.
+
+$7 \text{ notebooks/hour} \times 6 \text{ hours} = 42 \text{ notebooks}.$
+
+Therefore, the total number",42,42,,CORRECT,INCORRECT,HIGH,,
+DISP_071,rollout_gsm8k_fresh_019_rec_Qwen2.5-Math-1.5B-Instruct_s402,gsm8k_fresh_019,Total notebooks sold in 5 hours = 24 * 5 = 120 notebooks.,120,120,,CORRECT,INCORRECT,HIGH,,
+DISP_072,rollout_gsm8k_fresh_001_rec_Qwen2.5-Math-1.5B-Instruct_s404,gsm8k_fresh_001,"To find the total number of notebooks sold in 5 hours, we need to multiply the number of notebooks sold per hour by the number of hours.
+
+$6 \text{ notebooks/hour} \times 5 \text{ hours} = 30 \text{ notebooks}.$
+
+Therefore, the total number",30,30,,CORRECT,INCORRECT,HIGH,,

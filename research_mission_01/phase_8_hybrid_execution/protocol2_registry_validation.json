@@ -1,0 +1,214 @@
+{
+  "registry_sha256": "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c",
+  "expected_sha256": "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c",
+  "hash_match": true,
+  "total_problems": 20,
+  "all_problems_passed": true,
+  "audit_summary": {
+    "leakage_free_rate": 1.0,
+    "distinct_intermediates_rate": 1.0,
+    "aligned_prefixes_rate": 1.0
+  },
+  "per_problem_audit": [
+    {
+      "problem_id": "gsm8k_fresh_000",
+      "gold_final_answer": "80",
+      "correct_intermediate": "20",
+      "error_intermediate": "22",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_001",
+      "gold_final_answer": "120",
+      "correct_intermediate": "30",
+      "error_intermediate": "32",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_002",
+      "gold_final_answer": "168",
+      "correct_intermediate": "42",
+      "error_intermediate": "44",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_003",
+      "gold_final_answer": "128",
+      "correct_intermediate": "32",
+      "error_intermediate": "34",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_004",
+      "gold_final_answer": "180",
+      "correct_intermediate": "45",
+      "error_intermediate": "47",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_005",
+      "gold_final_answer": "240",
+      "correct_intermediate": "60",
+      "error_intermediate": "62",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_006",
+      "gold_final_answer": "176",
+      "correct_intermediate": "44",
+      "error_intermediate": "46",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_007",
+      "gold_final_answer": "240",
+      "correct_intermediate": "60",
+      "error_intermediate": "62",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_008",
+      "gold_final_answer": "312",
+      "correct_intermediate": "78",
+      "error_intermediate": "80",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_009",
+      "gold_final_answer": "224",
+      "correct_intermediate": "56",
+      "error_intermediate": "58",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_010",
+      "gold_final_answer": "300",
+      "correct_intermediate": "75",
+      "error_intermediate": "77",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_011",
+      "gold_final_answer": "384",
+      "correct_intermediate": "96",
+      "error_intermediate": "98",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_012",
+      "gold_final_answer": "272",
+      "correct_intermediate": "68",
+      "error_intermediate": "70",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_013",
+      "gold_final_answer": "360",
+      "correct_intermediate": "90",
+      "error_intermediate": "92",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_014",
+      "gold_final_answer": "456",
+      "correct_intermediate": "114",
+      "error_intermediate": "116",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_015",
+      "gold_final_answer": "320",
+      "correct_intermediate": "80",
+      "error_intermediate": "82",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_016",
+      "gold_final_answer": "420",
+      "correct_intermediate": "105",
+      "error_intermediate": "107",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_017",
+      "gold_final_answer": "528",
+      "correct_intermediate": "132",
+      "error_intermediate": "134",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_018",
+      "gold_final_answer": "368",
+      "correct_intermediate": "92",
+      "error_intermediate": "94",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    },
+    {
+      "problem_id": "gsm8k_fresh_019",
+      "gold_final_answer": "480",
+      "correct_intermediate": "120",
+      "error_intermediate": "122",
+      "answer_leakage": false,
+      "distinct_intermediates": true,
+      "prefix_intermediate_alignment": true,
+      "status": "PASS"
+    }
+  ]
+}

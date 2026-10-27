@@ -1,0 +1,46 @@
+{
+  "test_missing_registry": {
+    "status": "PASS"
+  },
+  "test_registry_hash_mismatch": {
+    "status": "PASS",
+    "message": "REGISTRY INTEGRITY VIOLATION!\nExpected: d312bea07a4985ee4917"
+  },
+  "test_corrupted_jsonl_recovery": {
+    "status": "PASS",
+    "recovered": [
+      "rec_01",
+      "rec_02"
+    ]
+  },
+  "test_model_revision_pinning": {
+    "status": "PASS",
+    "revisions": {
+      "Qwen/Qwen2.5-Math-1.5B": "4a83ca6e4526a4f2da3aa259ec36c259f66b2ab2",
+      "Qwen/Qwen2.5-Math-1.5B-Instruct": "aafeb0fc6f22cbf0eaeed126eff8be45b0360a35"
+    }
+  },
+  "test_generation_configuration": {
+    "status": "PASS",
+    "max_new_tokens": 256,
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "seeds": [
+      401,
+      402,
+      403,
+      404,
+      405
+    ]
+  },
+  "test_truncation_and_eos_logic": {
+    "status": "PASS"
+  },
+  "test_prompt_token_slicing": {
+    "status": "PASS"
+  },
+  "test_frozen_registry_hash": {
+    "status": "PASS",
+    "file": "/Users/shamthakare/.gemini/antigravity/scratch/recovery_eval_repair/research_mission_01/phase_8_hybrid_execution/BALANCED_PROMPT_REGISTRY.json"
+  }
+}
