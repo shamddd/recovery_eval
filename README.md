@@ -2,319 +2,210 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](requirements.txt)
-[![Tests: Passing](https://img.shields.io/badge/Tests-Passing-success.svg)](tests/)
+[![Tests: 49 Passing](https://img.shields.io/badge/Tests-49%20Passing-success.svg)](tests/)
 [![Dataset SHA-256](https://img.shields.io/badge/Dataset%20SHA--256-Verified-blueviolet.svg)](data/checksums.sha256)
-[![IEEE BigData 2026](https://img.shields.io/badge/Submission-IEEE%20BigData%20%2F%20MLBD%202026-orange.svg)](submission_mlbd2026/)
+[![Status: Submission Manuscript](https://img.shields.io/badge/Status-Submission%20Manuscript-orange.svg)](submission_mlbd2026/)
 
 ---
 
-## 1. Project Title & Research Question
+## 1. Project Title
 
-**Project**: `recovery_eval` — State-Matched and Provenance-Aware Evaluation of Recovery Behavior in Language-Model Reasoning  
-**Primary Research Question**:  
-> *Does post-training (supervised instruction tuning and alignment) impair or enhance an autoregressive language model's capacity to spontaneously recover from reasoning errors when prompted with corrupted intermediate reasoning states?*
+**`recovery_eval`**: State-Matched and Provenance-Aware Evaluation of Recovery Behavior in Language-Model Reasoning
 
 ---
 
-## 2. Scientific Motivation
+## 2. Research Overview
 
-A central question in language-model reasoning is whether models possess intrinsic error-detection and correction mechanisms during chain-of-thought generation. Prior literature has presented conflicting findings: some works report that post-training induces a severe "recovery penalty," where aligned models become rigid and unswervingly adhere to erroneous reasoning steps, whereas unaligned base models purportedly retain latent self-correction capacity.
+A critical open question in autoregressive language-model reasoning is whether models possess intrinsic capabilities to detect, backtrack from, and correct intermediate errors within chain-of-thought generation. Prior literature reported conflicting outcomes: some studies observed that post-training (supervised instruction tuning and RL alignment) induced a severe "recovery penalty," where aligned models purportedly became rigid and unable to escape reasoning errors.
 
-However, forensic analysis reveals that earlier evaluation protocols suffered from critical methodological confounders:
-1. **Token Starvation**: Output generation budgets were severely constrained (e.g., 64 tokens), causing multi-step recovery traces to be truncated mid-thought.
-2. **Length & State Asymmetries**: Prompts under recovery conditions were significantly longer and more syntactically complex than control prompts.
-3. **Parser Fragility**: Brittle heuristic regular expressions misattributed trailing explanations to mathematical errors.
-
-The `recovery_eval` project introduces a rigorous, length-balanced, state-matched evaluation framework designed to isolate the true causal impact of post-training on error recovery under controlled prefix perturbations.
+However, forensic audits revealed that earlier evaluation protocols suffered from severe methodological confounders: output token starvation (capping generations at 64 tokens), prompt length asymmetries between control and recovery conditions, and fragile heuristic regular-expression parsers. The `recovery_eval` project introduces a length-balanced, state-matched evaluation protocol (Protocol 2.0) that isolates model behavior under controlled intermediate prefix perturbations.
 
 ---
 
-## 3. Principal Investigator
+## 3. Research Question
 
-- **Researcher**: Sham Satish Thakare  
-- **Email**: `shamthakare@gmail.com`  
-- **Affiliation**: Independent Research / Antigravity Laboratory  
-- **Target Venue**: 2026 IEEE International Conference on Big Data (IEEE BigData 2026)  
-- **Target Track**: 11th IEEE Special Session on Machine Learning on Big Data (MLBD 2026)  
-- **Manuscript Status**: Submission Manuscript (under review / submission freeze, October 2026)
+> **Primary Question**: Under controlled, state-matched prefix continuation conditions, does post-training impair or enhance an autoregressive language model's capacity to spontaneously recover from an externally supplied erroneous intermediate reasoning state?
 
 ---
 
-## 4. Experimental Framework
+## 4. Scientific Contributions
 
-The `recovery_eval` evaluation framework is structured around three foundational principles:
-1. **State Matching**: Both Control and Recovery prompts provide identical problem context and reasoning state history up to the intervention boundary.
-2. **Provenance Awareness**: Every rollout is permanently logged in an immutable, append-only ledger (`EventLedger`) containing model metadata, generation seeds, temperature, exact input tokens, raw text outputs, and stop reasons.
-3. **Dual Scoring Regimes**: Raw model responses are evaluated under two independent scoring regimes:
-   - *Legacy Heuristic Verifier*: Regular expression parsing with last-number fallback.
-   - *Structural / Semantic Equivalence Verifier*: Mathematical equivalence testing that parses boxed LaTeX equations and semantic statements (e.g., `total revenue is 80`).
-
----
-
-## 5. Qwen Model Checkpoints
-
-Experiments were conducted on the official Qwen2.5-Math family checkpoints:
-- **Base Checkpoint**: `Qwen/Qwen2.5-Math-1.5B`
-- **Instruct Checkpoint**: `Qwen/Qwen2.5-Math-1.5B-Instruct`
-- **Parameter Scale**: 1.5 Billion parameters
-- **Architecture**: Decoder-only autoregressive Transformer with RoPE embeddings and SwiGLU activations.
-
-Both models were evaluated under identical sampling configurations:
-- `temperature`: 0.7
-- `top_p`: 0.95
-- `max_new_tokens`: 256 tokens (expanded 4x relative to Protocol 1.0 to eliminate token starvation)
-- `repetition_penalty`: 1.0
+1. **Methodological Dissection of Protocol 1.0**: Demonstrates that the historically reported post-training recovery penalty ($D \approx -0.21$) was an artifact of token starvation (64-token ceiling) and prefix length confounding rather than an intrinsic alignment penalty.
+2. **State-Matched Evaluation Protocol (Protocol 2.0)**: Establishes a rigorous benchmarking framework with identical prompt token lengths, balanced intermediate steps, an expanded 256-token budget, and dual evaluation regimes.
+3. **Empirical Characterization of Continuation Inertia**: In evaluating 400 genuine neural rollouts across `Qwen2.5-Math-1.5B` (Base and Instruct), observes zero spontaneous self-corrections ($0/200, 0.00\%$) and demonstrates that models exhibit near-total **continuation inertia** ($197/200, 98.50\%$), faithfully continuing downstream calculations from the corrupted premise.
+4. **Parser Bias Identification**: Discovers that a 3% deficit in Base model control accuracy under legacy regular-expression extraction was entirely driven by unprompted trailing explanatory bullet points ending in step digits (`3`), vanishing completely under structural/semantic equivalence testing.
+5. **Rigorous Degenerate Inference Handling**: Establishes that when empirical variance across problem clusters is zero ($D_j = 0$ for all $j$), the conventional Student-$t$ statistic ($0/0$) is mathematically undefined, and reports exact Clopper-Pearson binomial bounds with explicit sensitivity modeling.
 
 ---
 
-## 6. Prompt & State-Matching Methodology
+## 5. Experimental Design
 
-To eliminate length and state confounding, Protocol 2.0 implements **state-matched prefix pairs**:
-- **Problem Statement**: Shared identically between Control and Recovery conditions.
-- **Prefix Structure**:
-  - *Control Condition*: Injects a valid intermediate reasoning step (Step 1 calculation correct).
-  - *Recovery Condition*: Injects a state-matched, syntactically identical intermediate calculation containing a controlled arithmetic corruption (Step 1 calculation corrupted by $\pm \delta$).
-- **Continuation Prompt**: In both conditions, the model is prompted to continue reasoning seamlessly from the prefix boundary:
-  ```
-  Problem: A store sells 4 shirts for $20 each and 2 hats for $15 each. What is the total revenue?
-  
-  [Control Prefix]:
-  Step 1: The total revenue from shirts is 4 * 20 = 80 dollars.
-  
-  [Recovery Prefix]:
-  Step 1: The total revenue from shirts is 4 * 20 = 60 dollars.
-  ```
+The evaluation matrix follows a balanced $2 \times 2 \times 20 \times 5$ factorial structure:
+- **Models ($M = 2$)**: `Qwen2.5-Math-1.5B` and `Qwen2.5-Math-1.5B-Instruct`
+- **Conditions ($K = 2$)**: Control (correct intermediate step) and Recovery (state-matched corrupted intermediate step)
+- **Problem Clusters ($C = 20$)**: 20 canonical multi-step arithmetic reasoning problems (`gsm8k_fresh_000` to `_019`)
+- **Generation Seeds ($S = 5$)**: 5 independent seeds per cell ($s \in \{401, 402, 403, 404, 405\}$)
+- **Total Rollouts**: Exactly 400 genuine neural rollouts
 
 ---
 
-## 7. Synthetic Arithmetic Dataset Construction
+## 6. Model Configurations
 
-The benchmark dataset consists of 20 canonical multi-step arithmetic word problems (`problem_01` to `problem_20`). 
-- **Structure**: 2-step and 3-step linear arithmetic compositions involving multiplication, division, addition, and subtraction.
-- **Controlled Error Injection**: The intermediate error injection systematically perturbs the first sub-result while preserving integer validity and problem units.
-- **Gold Solution Integrity**: Every problem has a verified ground truth final answer under both the unperturbed premise and the corrupted counterfactual premise.
-
----
-
-## 8. Experimental Configurations
-
-- **Execution Hardware**: NVIDIA RTX 4090 (24 GB VRAM), Ubuntu 22.04, CUDA 12.4.
-- **Container Environment**: `runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04`
-- **Inference Engine**: HuggingFace `transformers` / PyTorch with bfloat16 precision.
-- **Random Seeds**: 5 independent seeds per cell ($s \in \{42, 43, 44, 45, 46\}$).
-- **Execution Cost**: Complete 400-rollout neural generation completed in ~35 minutes on RunPod for ~$0.20 total compute spend (well within the $1.00 ceiling).
+- **Base Checkpoint**: `Qwen/Qwen2.5-Math-1.5B` (Revision: `c181514eb9160eb80f0ed9a3c9e6d013ab63060a`)
+- **Instruct Checkpoint**: `Qwen/Qwen2.5-Math-1.5B-Instruct` (Revision: `8a719c2ddc18eb3d441113b2fa7975c613045610`)
+- **Sampling Parameters**: `temperature = 0.7`, `top_p = 0.95`, `max_new_tokens = 256`, `repetition_penalty = 1.0`
+- **Execution Precision**: `float16` on `cuda` (NVIDIA RTX 4090, 24 GB VRAM)
 
 ---
 
-## 9. Complete 400-Rollout Evaluation Matrix
+## 7. Benchmark Construction
 
-The evaluation matrix comprises exactly 400 genuine neural rollouts:
-$$20 \text{ problems} \times 2 \text{ models (Base, Instruct)} \times 2 \text{ conditions (Control, Recovery)} \times 5 \text{ seeds} = 400 \text{ rollouts}$$
-
-| Problem ID | Base Control | Base Recovery | Instruct Control | Instruct Recovery | Total Rollouts |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| `problem_01` – `problem_20` | 5 rollouts / prob | 5 rollouts / prob | 5 rollouts / prob | 5 rollouts / prob | 20 / prob |
-| **Total (20 Problems)** | **100 rollouts** | **100 rollouts** | **100 rollouts** | **100 rollouts** | **400 rollouts** |
-
-All 400 raw rollouts are frozen in `data/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl` with SHA-256:
-```
-b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15
-```
+The evaluation utilizes 20 multi-step arithmetic problems requiring sequential 2-step or 3-step linear operations (e.g., unit rate multiplication followed by revenue accumulation):
+- **Control Prefix**: Provides the exact problem context and a correct Step 1 intermediate derivation.
+- **Recovery Prefix**: Provides identical problem context and token length up to the intermediate calculation, where the calculated value is perturbed by $\pm \delta$ while preserving mathematical format.
+- **Gold Solutions**: Every problem has a verified integer ground truth answer under the true premise.
 
 ---
 
-## 10. Statistical Methodology
+## 8. Protocol Comparison
 
-Because generations within the same problem share problem context, naive i.i.d. pooling produces artificially deflated standard errors. We utilize **cluster-level paired contrasts** ($C = 20$ problem clusters, $\mathrm{df} = 19$).
-
-For each problem cluster $j$:
-$$D_j = (p_{IR,j} - p_{BR,j}) - (p_{IC,j} - p_{BC,j})$$
-$$\bar{D} = \frac{1}{C}\sum_{j=1}^C D_j, \quad \mathrm{SE}_{\text{cluster}} = \frac{s_D}{\sqrt{C}}, \quad t = \frac{\bar{D}}{\mathrm{SE}_{\text{cluster}}}$$
-
-### Exact Binomial Bounds for Boundary Conditions
-Because zero recoveries were observed across 200 recovery rollouts ($k = 0, n = 200$), asymptotic Wald intervals collapse to zero. We report **Clopper-Pearson exact confidence intervals**:
-- **Rollout-Level ($n = 200, k = 0$)**:
-  - Two-Sided 95% Clopper-Pearson CI: $[0.00\%, 1.83\%]$
-  - One-Sided 95% Upper Bound: $\le 1.49\%$
-- **Cluster-Level ($C = 20, k = 0$)**:
-  - Two-Sided 95% Clopper-Pearson CI: $[0.00\%, 16.84\%]$
-  - One-Sided 95% Upper Bound: $\le 13.91\%$
-
----
-
-## 11. Main Findings
-
-```
-================================================================================
-EVALUATION REGIME 1: Heuristic MathVerifier (Legacy Regex)
-================================================================================
-  Base Model Control (p_BC):       0.9700 (97 / 100 correct)
-  Base Model Recovery (p_BR):      0.0000 ( 0 / 100 correct)
-  Instruct Model Control (p_IC):   1.0000 (100 / 100 correct)
-  Instruct Model Recovery (p_IR):  0.0000 ( 0 / 100 correct)
-  ------------------------------------------------------------------------------
-  Cluster Interaction Contrast (D): -0.0300
-  Cluster-Robust SE:                 0.0164
-  Student-t Statistic:              -1.8311 (df = 19)
-  Two-Sided p-value:                 0.0828  (Statistically Non-Significant at alpha = 0.05)
-  95% Confidence Interval:          [-0.0643, +0.0043]
-
-================================================================================
-EVALUATION REGIME 2: Structural / Semantic Equivalence Verifier
-================================================================================
-  Base Model Control (p_BC):       1.0000 (100 / 100 correct)
-  Base Model Recovery (p_BR):      0.0000 ( 0 / 100 correct)
-  Instruct Model Control (p_IC):   1.0000 (100 / 100 correct)
-  Instruct Model Recovery (p_IR):  0.0000 ( 0 / 100 correct)
-  ------------------------------------------------------------------------------
-  Cluster Interaction Contrast (D): +0.0000
-  Cluster-Robust SE:                 0.0000
-  Two-Sided p-value:                 1.0000
-  95% Confidence Interval:          [+0.0000, +0.0000]
-```
-
-### Key Takeaways:
-1. **The reported post-training recovery penalty ($D \approx -0.21$) was not reproduced.** Under Protocol 2.0, the true structural interaction contrast is exactly $D = 0.0000$.
-2. **Zero Recovery Observed**: Exactly 0 out of 200 recovery rollouts ($0.00\%$) spontaneously corrected the injected error.
-
----
-
-## 12. Parser Failure Analysis
-
-Under the legacy heuristic `MathVerifier`, Base Control achieved 97% accuracy compared to 100% for Instruct Control. Forensic inspection revealed this was a **pure parser artifact**:
-- In exactly 3 rollouts (`problem_04` seeds 42, 43, 44), the Base model generated the correct intermediate and final equations (e.g., `80 dollars`), but added conversational closing remarks containing arbitrary numbers (e.g., *"This problem has 2 parts"*).
-- The heuristic regex extractor fell back to the last numerical token, extracting `2` instead of `80`.
-- Under the Structural/Semantic Verifier, which evaluates boxed LaTeX and equation statements, all 3 rollouts score $1.0$, bringing Base Control to **100.0%**.
-
----
-
-## 13. Continuation Inertia Interpretation
-
-Rather than demonstrating an alignment-induced penalty, the data reveal widespread **continuation inertia** in autoregressive generation:
-- Across all 200 recovery rollouts, **197 rollouts (98.50%)** faithfully accepted the corrupted intermediate value as ground truth and propagated it through subsequent calculations.
-- Exactly **3 rollouts (1.50%)** showed degenerate termination or hallucinated unrelated symbols.
-- Zero rollouts ($0.00\%$) paused to re-verify the prompt's mathematical premise.
-
-Autoregressive language models prioritize conditional likelihood under the prompt context; in the absence of explicit verification prompts or multi-turn critique loops, they continue reasoning from the provided premises.
-
----
-
-## 14. Protocol 1.0 versus Protocol 2.0 Comparison
-
-| Dimension | Protocol 1.0 (Historical) | Protocol 2.0 (Verified Standard) |
+| Dimension | Protocol 1.0 (Historical Confounded) | Protocol 2.0 (Verified Standard) |
 |---|---|---|
 | **Max New Tokens** | 64 tokens (Starved) | **256 tokens (Unconstrained)** |
-| **Prefix Lengths** | Unbalanced (Control: short, Recovery: long) | **State-Matched (Identical tokens up to error)** |
-| **Scoring** | Regex-only heuristic | **Dual: Heuristic + Structural Semantic** |
-| **Base Recovery** | ~25% (Artifact of brevity) | **0.00% (Continuation inertia)** |
-| **Instruct Recovery** | ~4% (Truncated verbose traces) | **0.00% (Continuation inertia)** |
-| **Interaction $D$** | $\approx -0.21$ (Confounded artifact) | **$0.0000$ (Structural) / $-0.0300$ ($p=0.08$, Heuristic)** |
+| **Prefix Lengths** | Unbalanced (Control: short, Recovery: long) | **State-Matched (Identical tokens up to perturbation)** |
+| **Scoring Regimes** | Positional regex only | **Dual: Heuristic Regex + Structural Equivalence** |
+| **Reported Base Recovery** | $\approx 25\%$ (Short completions) | **$0.00\%$ (0 / 100)** |
+| **Reported Instruct Recovery**| $\approx 4\%$ (Truncated verbose completions) | **$0.00\%$ (0 / 100)** |
+| **Interaction Contrast ($D$)**| $\approx -0.21$ (Confounded artifact) | **$+0.0000$ (Structural sample) / $-0.0300$ ($p=0.08$, Heuristic)** |
 
 ---
 
-## 15. Scientific Limitations
-
-To maintain strict scientific integrity, the boundary conditions of this study must be clearly articulated:
-
-> [!IMPORTANT]
-> **Scope of the Empirical Claims**:
-> 1. **Evaluated Population**: The empirical findings specifically characterize `Qwen2.5-Math-1.5B` and `Qwen2.5-Math-1.5B-Instruct` under single-turn, state-matched prefix prompting on multi-step arithmetic.
-> 2. **No Universal Generalization**: These findings do **not** claim that language models universally lack self-correction capabilities across all scales, modalities, or prompting paradigms. Larger frontier models (e.g., 70B+, GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro) or models equipped with external tool use, verifiers, or multi-turn iterative prompting may demonstrate recovery behaviors.
-> 3. **Prompt Distribution**: The findings establish that spontaneous recovery does not occur organically within standard forward decoding when errors are embedded in intermediate chain-of-thought prefixes.
-
----
-
-## 16. Reproducibility Instructions
-
-### System Requirements:
-- Python 3.10, 3.11, 3.12, or 3.13
-- Standard CPU (no GPU required for evaluation and statistical analysis)
-- Standard RAM (requires < 50 MB memory)
-
-### Setup & Execution:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/shamddd/recovery_eval.git
-   cd recovery_eval
-   ```
-2. Install minimal dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the complete statistical reproduction script:
-   ```bash
-   python3 reproduce_results.py
-   ```
-   *Execution completes in under 1 second on CPU and reproduces all reported cluster statistics, $t$-values, $p$-values, confidence intervals, and continuation inertia metrics bit-for-bit.*
-
-4. Run the automated test suite:
-   ```bash
-   pytest tests/
-   ```
-
----
-
-## 17. Research Timeline & Publication Status
-
-- **Research Mission 01**: 13 rigorous research phases spanning October 2026.
-  - Comprehensive timeline documentation: [`docs/RESEARCH_TIMELINE.md`](docs/RESEARCH_TIMELINE.md).
-- **Manuscript Details**:
-  - Format: IEEE Conference format (two-column, 4-page paper).
-  - Target: 2026 IEEE International Conference on Big Data (IEEE BigData 2026) — 11th IEEE Special Session on Machine Learning on Big Data (MLBD 2026).
-  - Submission Status: **Submission Manuscript** (Frozen October 2026; under review).
-  - Verified LaTeX Source: [`submission_mlbd2026/main.tex`](submission_mlbd2026/main.tex).
-  - Compiled Vector PDF: [`submission_mlbd2026/08_FINAL_IEEE_SUBMISSION.pdf`](submission_mlbd2026/08_FINAL_IEEE_SUBMISSION.pdf) (SHA-256: `a8367a92a7d094435dac13b6e2a0e962dacdb5ba14cd3be46d96913b96757bfc`).
-
----
-
-## Repository Structure
+## 9. Main Empirical Results
 
 ```
-recovery_eval/
-├── README.md                                 # Top-level comprehensive documentation
-├── LICENSE                                   # MIT License
-├── CITATION.cff                              # Citation metadata
-├── CONTRIBUTING.md                           # Contributor guidelines and integrity standards
-├── SECURITY.md                               # Security policy and secret reporting
-├── requirements.txt                          # Minimal Python dependencies (numpy, scipy, pytest)
-├── .gitignore                                # Git ignore rules
-├── reproduce_results.py                      # Standalone, bit-exact CPU reproducibility script
-├── data/
-│   ├── 10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl # 400 genuine Qwen neural rollouts
-│   └── checksums.sha256                      # SHA-256 manifest
-├── docs/
-│   ├── RESEARCH_TIMELINE.md                  # Comprehensive Phase I–XIII narrative timeline
-│   ├── STATISTICAL_METHODOLOGY.md            # Clustered error bounds & Clopper-Pearson CIs
-│   ├── CONTINUATION_INERTIA.md               # Analysis of 200 recovery continuations (98.5% propagation)
-│   └── PROTOCOL_COMPARISON.md                # Protocol 1.0 vs Protocol 2.0 comparative analysis
-├── submission_mlbd2026/                      # Submission manuscript package
-│   ├── main.tex                              # Canonical IEEEtran LaTeX source
-│   ├── references.bib                        # Complete references
-│   ├── IEEEtran.cls                          # IEEEtran LaTeX document class
-│   ├── figures/                              # Vector figures
-│   └── 08_FINAL_IEEE_SUBMISSION.pdf          # Final compiled 4-page submission PDF
-├── research_mission_01/                      # Complete historical archive of Phases I–XIII
-│   ├── 01_... to 10_...                      # Phase I scientific audit reports
-│   ├── phase_2_final_verification/           # Phase II materials
-│   ├── phase_3_submission_freeze/            # Phase III materials
-│   ├── phase_4_reviewer_driven_upgrade/      # Phase IV materials
-│   ├── phase_5_final_experimental_validation/# Phase V materials
-│   ├── phase_6_full_protocol2_validation/    # Phase VI materials
-│   ├── phase_7_complete_neural_execution/    # Phase VII materials
-│   ├── phase_8_hybrid_execution/             # Phase VIII materials
-│   ├── phase_9_final_local_validation/       # Phase IX materials
-│   ├── phase_10_runpod_execution/            # Phase X materials (sanitized credentials)
-│   ├── phase_11_scientific_falsification/    # Phase XI materials
-│   ├── phase_12_publication_gate/            # Phase XII materials
-│   └── phase_13_final_submission/            # Phase XIII materials
-├── src/                                      # recovery_eval Python package
-│   └── recovery_eval/
-└── tests/                                    # Automated pytest suite
+================================================================================
+EVALUATION REGIME 1: Structural / Semantic Equivalence Verifier
+================================================================================
+  Base Model Control (p_BC):          1.0000 (100 / 100 correct)
+  Base Model Recovery (p_BR):         0.0000 (  0 / 100 correct)
+  Instruct Model Control (p_IC):      1.0000 (100 / 100 correct)
+  Instruct Model Recovery (p_IR):     0.0000 (  0 / 100 correct)
+  ------------------------------------------------------------------------------
+  Observed Interaction Contrast (D): +0.0000 (Sample-level equality)
+  Sample Cluster Std (s_D):           0.0000
+  Cluster-Robust SE:                  0.0000
+  Conventional Student-t Statistic:   UNDEFINED (0 ÷ 0)
+  Conventional Two-Sided p-value:     NOT COMPUTABLE
+  Conventional 95% CI:                DEGENERATE [Not inferentially valid]
+  Population Equivalence:             NOT ESTABLISHED by conventional Student-t test
+
+================================================================================
+EVALUATION REGIME 2: Heuristic MathVerifier (Legacy Regex)
+================================================================================
+  Base Model Control (p_BC):          0.9700 ( 97 / 100 correct)
+  Base Model Recovery (p_BR):         0.0000 (  0 / 100 correct)
+  Instruct Model Control (p_IC):      1.0000 (100 / 100 correct)
+  Instruct Model Recovery (p_IR):     0.0000 (  0 / 100 correct)
+  ------------------------------------------------------------------------------
+  Cluster Interaction Contrast (D):  -0.0300
+  Cluster Sample Std (s_D):           0.0733
+  Cluster-Robust SE:                  0.0164
+  Student-t Statistic:               -1.8311 (df = 19)
+  Two-Sided p-value:                  0.0828 (Not statistically significant at α = 0.05)
+  95% Confidence Interval:           [-0.0643, +0.0043]
 ```
 
 ---
 
-## Citation
+## 10. Continuation Inertia
+
+Across all 200 recovery rollouts (100 Base + 100 Instruct):
+- **Spontaneous Self-Correction**: **0 / 200 (0.00%)**. Neither model ever paused, backtracked, or corrected the supplied arithmetic error.
+- **Injected Error Propagation**: **197 / 200 (98.50%)**. The models faithfully accepted the corrupted intermediate value as ground truth and executed downstream calculations consistent with that error.
+- **Truncated / Divergent Rollouts**: **3 / 200 (1.50%)**. Terminated or emitted disconnected commentary.
+
+> [!NOTE]
+> **Operational Interpretation**: Autoregressive decoding maximizes continuation likelihood conditioned on the prompt context. Under single-turn state-matched prompting without explicit verification instructions or tool access, 1.5B language models exhibit continuation inertia rather than intrinsic self-correction.
+
+---
+
+## 11. Statistical Uncertainty & Exact Bounds
+
+Because sample recovery was zero ($k = 0, n = 200$), conventional Wald confidence intervals collapse to $[0, 0]$. We compute exact **Clopper-Pearson** binomial confidence bounds:
+
+- **Rollout-Level Sensitivity ($n = 200, k = 0$)**:
+  - Two-Sided 95% Clopper-Pearson CI: **$[0.000\%, 1.828\%]$** ($\approx [0\%, 1.83\%]$)
+  - One-Sided 95% Upper Bound: **$\le 1.487\%$** ($\approx \le 1.49\%$)
+  - *Assumption*: Assumes 200 independent Bernoulli trials. Because rollouts are clustered within 20 problem prompts, intra-cluster correlation may exist.
+- **Problem-Cluster Sensitivity ($C = 20, k = 0$)**:
+  - Two-Sided 95% Clopper-Pearson CI: **$[0.000\%, 16.843\%]$** ($\approx [0\%, 16.84\%]$)
+  - One-Sided 95% Upper Bound: **$\le 13.911\%$** ($\approx \le 13.91\%$)
+  - *Sampling Model*: Treats 20 problem clusters as independent Bernoulli observations. This bound quantifies problem-level event sensitivity and must not be confused with a cluster-robust confidence interval for rollout rates.
+
+---
+
+## 12. Parser Sensitivity & False Negatives
+
+Under the heuristic `MathVerifier`, the Base model scored 97% in Control, compared to 100% for Instruct. Forensic analysis confirms this 3% deficit is an artifact:
+- In exactly 3 rollouts (`gsm8k_fresh_004`, `gsm8k_fresh_006`, `gsm8k_fresh_013` at seed 405), the Base model generated the correct answer and intermediate steps, but appended an unprompted 3-point explanation.
+- The regex parser fell back to the last line (`"- In step 3, we present the final answer..."`), extracting the digit `3` instead of the true answer.
+- Under structural evaluation, all 3 rollouts score 1.0, restoring Base Control to 100.0%.
+
+---
+
+## 13. Reproducibility Instructions
+
+### Requirements
+- Python 3.10+
+- Pure local CPU (no GPU required for evaluation or statistical replication)
+- Dependencies: `numpy>=1.24.0`, `scipy>=1.10.0`, `pytest>=8.0.0`
+
+### Step-by-Step Execution
+```bash
+# 1. Clone repository
+git clone https://github.com/shamddd/recovery_eval.git
+cd recovery_eval
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run standalone statistical reproduction (runs in < 0.20s on CPU)
+python3 reproduce_results.py
+
+# 4. Run automated test suite (49 passing tests)
+pytest -v
+```
+
+---
+
+## 14. Research Archive & Timeline
+
+The repository preserves the complete 14-phase research progression:
+- [`docs/RESEARCH_TIMELINE.md`](docs/RESEARCH_TIMELINE.md): Comprehensive narrative timeline.
+- [`research_mission_01/`](research_mission_01/): Full historical archive of all phases (Phases I–XIV).
+- [`research_mission_01/phase_14_public_release/`](research_mission_01/phase_14_public_release/): Phase XIV audit reports (Reports 00–18).
+
+---
+
+## 15. Scientific Scope & Limitations
+
+1. **Model Scope**: Findings are strictly evaluated on `Qwen2.5-Math-1.5B` and `Qwen2.5-Math-1.5B-Instruct`. They do not generalize unconditionally to larger parameter scales (70B+, frontier LLMs) or other model architectures.
+2. **Task Scope**: Evaluated on 20 synthetic multi-step arithmetic problems. This benchmark is not representative of all mathematical reasoning or informal logic tasks.
+3. **Prompt Conditioning**: Evaluates forward continuation under a single-turn state-matched prefix. Does not evaluate multi-turn dialog, self-reflection prompts, or external tool-augmented verifiers.
+4. **Statistical Dependence**: Five generation seeds are evaluated per problem cluster; observations within a cluster share problem context.
+5. **Human Adjudication**: A 40-item annotation packet has been curated; independent crowdsourced human adjudication remains pending.
+
+---
+
+## 16. Manuscript
+
+- **LaTeX Source**: [`submission_mlbd2026/main.tex`](submission_mlbd2026/main.tex)
+- **Compiled PDF**: [`submission_mlbd2026/08_FINAL_IEEE_SUBMISSION.pdf`](submission_mlbd2026/08_FINAL_IEEE_SUBMISSION.pdf) (SHA-256: `a8367a92a7d094435dac13b6e2a0e962dacdb5ba14cd3be46d96913b96757bfc`)
+- **Status**: **Prepared submission manuscript** (4 pages, IEEE conference format).
+
+---
+
+## 17. Citation
 
 ```bibtex
 @inproceedings{thakare2026recoveryeval,
@@ -325,3 +216,30 @@ recovery_eval/
   url={https://github.com/shamddd/recovery_eval}
 }
 ```
+
+---
+
+## 18. Security Policy
+
+Refer to [`SECURITY.md`](SECURITY.md) for vulnerability reporting and credential protection policies.
+
+---
+
+## 19. License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 20. Research & Publication Status
+
+| Milestone / Dimension | Status | Notes |
+|---|---|---|
+| **Experimental Neural Rollouts** | **COMPLETED** | 400 rollouts on NVIDIA RTX 4090, frozen dataset verified |
+| **Statistical Recomputation** | **COMPLETED** | Hardened degenerate variance handling, exact Clopper-Pearson bounds |
+| **Automated Test Suite** | **COMPLETED** | 49 / 49 tests passing in 31.54s |
+| **Clean-Room Verification** | **COMPLETED** | Bit-for-bit replication in isolated `/tmp` directory |
+| **Human Adjudication** | **PENDING** | Protocol designed; external adjudication pending |
+| **Manuscript Preparation** | **COMPLETED** | 4-page IEEEtran format compiled with Tectonic |
+| **Conference Submission** | **UNCONFIRMED** | Prepared submission manuscript; official submission window requires PI verification |
+| **Repository Visibility** | **PRIVATE** | Public release candidate prepared, pending final PI authorization |
