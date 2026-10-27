@@ -1,0 +1,90 @@
+{
+  "dataset_sha256": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+  "total_rollouts": 400,
+  "models": {
+    "base": "Qwen/Qwen2.5-Math-1.5B",
+    "base_revision": "4a83ca6e4526a4f2da3aa259ec36c259f66b2ab2",
+    "instruct": "Qwen/Qwen2.5-Math-1.5B-Instruct",
+    "instruct_revision": "aafeb0fc6f22cbf0eaeed126eff8be45b0360a35"
+  },
+  "seeds": [
+    401,
+    402,
+    403,
+    404,
+    405
+  ],
+  "problems_count": 20,
+  "contingency_table": {
+    "base_control": {
+      "total": 100,
+      "correct_structural": 100,
+      "correct_heuristic": 97,
+      "propagated": 0,
+      "diverged": 0,
+      "recovered": 0
+    },
+    "base_recovery": {
+      "total": 100,
+      "correct_structural": 0,
+      "correct_heuristic": 0,
+      "propagated": 100,
+      "diverged": 0,
+      "recovered": 0
+    },
+    "instruct_control": {
+      "total": 100,
+      "correct_structural": 100,
+      "correct_heuristic": 100,
+      "propagated": 0,
+      "diverged": 0,
+      "recovered": 0
+    },
+    "instruct_recovery": {
+      "total": 100,
+      "correct_structural": 0,
+      "correct_heuristic": 0,
+      "propagated": 97,
+      "diverged": 3,
+      "recovered": 0
+    }
+  },
+  "cluster_statistics": {
+    "mean_D": 0.0,
+    "sd_D": 0.0,
+    "se_D": 0.0,
+    "t_statistic": "UNDEFINED (0/0)",
+    "p_value": "NOT COMPUTABLE"
+  },
+  "clopper_pearson": {
+    "rollout_level_k0_n200": {
+      "two_sided_95_ci": [
+        0.0,
+        0.01827534035513624
+      ],
+      "one_sided_95_upper": 0.014867039231272054
+    },
+    "model_level_k0_n100": {
+      "two_sided_95_ci": [
+        0.0,
+        0.03621669264517641
+      ],
+      "one_sided_95_upper": 0.029513049607039925
+    },
+    "cluster_level_k0_C20": {
+      "two_sided_95_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "one_sided_95_upper": 0.13910834066826516
+    }
+  },
+  "outcome_taxonomy": {
+    "total_recovery_rollouts": 200,
+    "Y_acc": 0,
+    "Y_det": 0,
+    "Y_corr": 0,
+    "Y_prop": 197,
+    "Y_div": 3
+  }
+}

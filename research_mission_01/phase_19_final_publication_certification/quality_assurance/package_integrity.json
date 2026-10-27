@@ -1,0 +1,54 @@
+{
+  "phase": "Phase XIX Final Publication Certification",
+  "timestamp": "2026-10-27T15:12:00+05:30",
+  "principal_investigator": "Sham Satish Thakare",
+  "canonical_repository": "https://github.com/shamddd/recovery_eval",
+  "branch": "research/mission19-final-publication-certification",
+  "dataset": {
+    "path": "data/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl",
+    "sha256": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+    "total_records": 400,
+    "unique_models": 2,
+    "unique_conditions": 2,
+    "unique_problems": 20,
+    "unique_seeds": 5,
+    "status": "VERIFIED"
+  },
+  "artifacts": {
+    "pdf_manuscript": {
+      "path": "output/RecoveryEval_PHASE19_FINAL_arXiv.pdf",
+      "sha256": "13d1c2d43665963a66f4654eedf83f8ad6b85d22649e5b0b95081feaf1fbd3a3",
+      "size_bytes": 287597,
+      "page_count": 16,
+      "fonts_embedded": true,
+      "status": "VERIFIED"
+    },
+    "source_archive": {
+      "path": "arxiv_submission/RecoveryEval_PHASE19_FINAL_Source.zip",
+      "sha256": "d872e41105eca7e4ba69cf8ccbccf99e3e0f374c91a88a56e5875a8a2259b7a1",
+      "clean_room_compilation": "EXIT CODE 0 (PASSED)",
+      "status": "VERIFIED"
+    }
+  },
+  "figures_verified": [
+    "figures/fig1_causal_dag.pdf",
+    "figures/fig2_architecture.pdf",
+    "figures/fig3_prefix_construction.pdf",
+    "figures/fig4_empirical_results.pdf",
+    "figures/fig5_provenance_chain.pdf"
+  ],
+  "tables_verified": [
+    "Table 1: Systematic Comparison of Reasoning Frameworks",
+    "Table 2: Factorial Completion Accuracy Under Protocol 2.0",
+    "Table 3: Process-Level Decomposition of Recovery Rollouts",
+    "Table 4: Clopper-Pearson Exact Confidence Bounds (k=0)",
+    "Table 5: Complete Benchmark Problem Registry (C=20)",
+    "Table 6: Reconciliation of Historical IEEE Criticisms"
+  ],
+  "reproducibility": {
+    "pytest_suite": "49 passed in 5.99s",
+    "standalone_script": "recompute_all_results.py completed with code 0",
+    "financial_expenditure": "USD $0.00"
+  },
+  "release_gate": "LOCKED"
+}
