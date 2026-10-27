@@ -1,0 +1,112 @@
+{
+  "audit_version": "Phase XVIII Final Scientific Integrity",
+  "total_defects_cataloged": 13,
+  "defects_resolved": 13,
+  "unresolved_defects": 0,
+  "defects": [
+    {
+      "id": "DEF-01",
+      "severity": "CRITICAL",
+      "category": "Figure Contradiction",
+      "description": "Figure 4 previously displayed obsolete Protocol 1.0 numbers (+0.430 recovery, -0.110 contrast) contradicting reported 0.0000 results.",
+      "resolution": "Regenerated fig4_empirical_results.pdf from frozen 400-rollout dataset displaying 100% control, 0% recovery, 98.5% error propagation, and exact Clopper-Pearson bounds.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-02",
+      "severity": "CRITICAL",
+      "category": "Figure Contradiction",
+      "description": "Figure 2 previously depicted prospective matching filter with caliper distance <= 0.25 and unequal token lengths (35 vs 33).",
+      "resolution": "Regenerated fig2_state_construction.pdf showing Protocol 2.0 Paired Counterfactual Prefix Perturbation design with delta_tokens=0 and delta_chars=0.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-03",
+      "severity": "MAJOR",
+      "category": "Figure Obsoletion",
+      "description": "Figure 1 previously referenced matching filter instead of Protocol 2.0 pre-cut design.",
+      "resolution": "Regenerated fig1_architecture.pdf illustrating 5-stage Protocol 2.0 pipeline: benchmark templates, PCPPE, execution ledger, dual verifier, and degenerate statistical analysis.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-04",
+      "severity": "MAJOR",
+      "category": "Provenance Integrity",
+      "description": "Figure 3 previously referenced obsolete Phase 2 dataset hash.",
+      "resolution": "Regenerated fig3_provenance_chain.pdf referencing canonical SHA-256 hash b8792f8d... and immutable ledger hash chain.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-05",
+      "severity": "CRITICAL",
+      "category": "Statistical Modeling",
+      "description": "Studentized t-test reporting p=0.000 despite sample standard deviation s_D = 0.0000 (0/0 undefined).",
+      "resolution": "Formalized degenerate variance in Section 6 and reproduce_results.py: stated t=0/0 undefined, removed false p-values, provided Clopper-Pearson exact bounds and cluster sensitivity bound.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-06",
+      "severity": "CRITICAL",
+      "category": "Causal Claims",
+      "description": "Cross-model Base vs Instruct comparisons previously claimed as causally identified ATE.",
+      "resolution": "Formalized SCM and Causal DAG: clarified within-model prefix contrast is causally identified ATE, whereas cross-model contrast is observational.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-07",
+      "severity": "MAJOR",
+      "category": "Human Annotation",
+      "description": "Text claimed blinded human validation across multiple raters with IRR kappa, unsupported by evidence.",
+      "resolution": "Factually calibrated in Section 8 and Appendix B: disclosed author audit on 40 items, archived open audit packet, noted multi-rater study pending.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-08",
+      "severity": "MAJOR",
+      "category": "Mechanistic Claims",
+      "description": "Continuation inertia asserted as proven internal mechanistic property of transformer architecture.",
+      "resolution": "Calibrated in Section 7: separated empirical observation (0/200 recoveries) from hypothesized mechanisms (cross-entropy loss, lack of backtrack tokens in SFT).",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-09",
+      "severity": "MINOR",
+      "category": "Worked Example Inconsistency",
+      "description": "Section 4.3 worked example used problem parameters not matching the prompt registry.",
+      "resolution": "Synchronized worked example with Template 1: 5 packs of 4 notebooks at $4 each = $80 gold answer.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-10",
+      "severity": "MINOR",
+      "category": "Typographic Overfull Hbox",
+      "description": "Filename 10_BLINDED_HUMAN_ANNOTATION_PACKET.csv and prompt strings caused paragraph margin overflow.",
+      "resolution": "Wrapped with \\path from url.sty and formatted prompt blocks across multiple lines, eliminating all overfull hboxes.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-11",
+      "severity": "MINOR",
+      "category": "Outcome Taxonomy",
+      "description": "Inconsistent labeling of process metrics (Y_acc, Y_det, Y_corr) versus terminal behaviors.",
+      "resolution": "Defined explicit hierarchy in Section 4.4: process indicators (all 0%) vs terminal behavioral partition (98.5% error propagation, 1.5% divergence).",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-12",
+      "severity": "MAJOR",
+      "category": "Dual-Verifier Diagnostics",
+      "description": "3.00% heuristic vs structural verifier discrepancy not explicitly documented with rollout evidence.",
+      "resolution": "Added Table 5 and Appendix A.3 detailing all 3 false-negative rollouts and explaining regex match failures on intermediate review text.",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "DEF-13",
+      "severity": "MINOR",
+      "category": "Abstract Cluster Sensitivity",
+      "description": "Abstract stated rollout-level Clopper-Pearson bound without qualifying cluster-level sensitivity.",
+      "resolution": "Updated abstract with both rollout-level CI [0.00%, 1.83%] and cluster sensitivity bound <= 13.91%.",
+      "status": "RESOLVED"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "dataset_path": "data/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl",
+  "dataset_sha256": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+  "total_rollouts": 400,
+  "duplicates": 0,
+  "truncation_count": 0,
+  "heuristic_results": {
+    "base_control": "97/100 (97.0%)",
+    "base_recovery": "0/100 (0.0%)",
+    "instruct_control": "100/100 (100.0%)",
+    "instruct_recovery": "0/100 (0.0%)",
+    "D": -0.03,
+    "SE": 0.0164,
+    "t": -1.8311,
+    "p": 0.0828,
+    "ci_95": [
+      -0.0643,
+      0.0043
+    ]
+  },
+  "structural_results": {
+    "base_control": "100/100 (100.0%)",
+    "base_recovery": "0/100 (0.0%)",
+    "instruct_control": "100/100 (100.0%)",
+    "instruct_recovery": "0/100 (0.0%)",
+    "D": 0.0,
+    "s_D": 0.0,
+    "SE": 0.0,
+    "t": "UNDEFINED (0/0)",
+    "p": "NOT COMPUTABLE",
+    "ci_95": "DEGENERATE"
+  },
+  "clopper_pearson": {
+    "rollout_level_n200": {
+      "two_sided_95": [
+        0.0,
+        1.8275
+      ],
+      "one_sided_95_upper": 1.4867
+    },
+    "model_level_n100": {
+      "two_sided_95": [
+        0.0,
+        3.6217
+      ],
+      "one_sided_95_upper": 2.9513
+    },
+    "cluster_level_c20": {
+      "two_sided_95": [
+        0.0,
+        16.8433
+      ],
+      "one_sided_95_upper": 13.9108
+    }
+  },
+  "taxonomy": {
+    "Base": {
+      "n": 100,
+      "Y_acc": [
+        0,
+        0.0
+      ],
+      "Y_det": [
+        0,
+        0.0
+      ],
+      "Y_corr": [
+        0,
+        0.0
+      ],
+      "Y_prop": [
+        98,
+        0.98
+      ],
+      "Y_div": [
+        2,
+        0.02
+      ]
+    },
+    "Instruct": {
+      "n": 100,
+      "Y_acc": [
+        0,
+        0.0
+      ],
+      "Y_det": [
+        0,
+        0.0
+      ],
+      "Y_corr": [
+        0,
+        0.0
+      ],
+      "Y_prop": [
+        99,
+        0.99
+      ],
+      "Y_div": [
+        1,
+        0.01
+      ]
+    },
+    "Total": {
+      "n": 200,
+      "Y_acc": [
+        0,
+        0.0
+      ],
+      "Y_det": [
+        0,
+        0.0
+      ],
+      "Y_corr": [
+        0,
+        0.0
+      ],
+      "Y_prop": [
+        197,
+        0.985
+      ],
+      "Y_div": [
+        3,
+        0.015
+      ]
+    }
+  }
+}
