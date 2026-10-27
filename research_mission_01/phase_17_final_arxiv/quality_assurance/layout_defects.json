@@ -1,0 +1,72 @@
+[
+  {
+    "id": "DEF-01",
+    "page": 1,
+    "location": "Abstract & Document Layout",
+    "type": "Excessive Text Density & Layout Constraint",
+    "severity": "High",
+    "description": "Abstract is a single dense 278-word block of text in IEEEtran 10pt two-column format with cramped leading and heavy inline notation.",
+    "cause": "Use of IEEEtran conference template designed for 4-page limits rather than standalone preprint format.",
+    "correction": "Migrate to Candidate A (11pt single-column academic article format with 1-inch margins and structured paragraphs)."
+  },
+  {
+    "id": "DEF-02",
+    "page": "1-5",
+    "location": "Whole Document",
+    "type": "Missing Embedded Figures",
+    "severity": "Critical",
+    "description": "Figures fig1_architecture, fig2_state_construction, fig3_provenance_chain, and fig4_empirical_results exist in the directory but are never included in the document via \\includegraphics.",
+    "cause": "Omission of figure environments during Phase XVI LaTeX drafting.",
+    "correction": "Embed all four high-resolution vector figures in dedicated figure environments with comprehensive captions."
+  },
+  {
+    "id": "DEF-03",
+    "page": "1-5",
+    "location": "Document Metadata",
+    "type": "Page Count Discrepancy",
+    "severity": "High",
+    "description": "Phase XVI reports state '10 pages, 4 figures, 3 tables', but the compiled PDF is only 5 pages without figures.",
+    "cause": "Report copied an unverified planning projection instead of measuring the actual compiled PDF output.",
+    "correction": "Reconstruct manuscript with full scientific depth, figures, and appendices to reach ~12-15 substantive pages, and update all metadata with verified page counts."
+  },
+  {
+    "id": "DEF-04",
+    "page": 2,
+    "location": "Table I (Literature Comparison)",
+    "type": "Column Squeezing & Formatting",
+    "severity": "Medium",
+    "description": "Table I spans two columns with narrow rigid widths, causing awkward hyphenation and cramped typography.",
+    "cause": "Two-column float environment constraints.",
+    "correction": "Rebuild as a full-width booktabs table with tabularx in single-column layout."
+  },
+  {
+    "id": "DEF-05",
+    "page": 3,
+    "location": "Table II & Results Text",
+    "type": "Overfull \\hbox Warnings",
+    "severity": "Medium",
+    "description": "Compiler reports overfull \\hbox (12.97pt too wide) at Table II and in results paragraphs.",
+    "cause": "Narrow 3.5-inch column width forcing mathematical expressions and table cells beyond column margins.",
+    "correction": "Single-column 6.5-inch text block eliminates column-width overfull boxes."
+  },
+  {
+    "id": "DEF-06",
+    "page": 5,
+    "location": "Section VIII (Reproducibility)",
+    "type": "Code Block Overflow",
+    "severity": "Medium",
+    "description": "Verbatim reproduction commands overflow margin (overfull \\hbox 103.8pt).",
+    "cause": "Verbatim environment within 3.5-inch column.",
+    "correction": "Format reproduction block with standard listing or wrapped bash formatting in single-column."
+  },
+  {
+    "id": "DEF-07",
+    "page": "1-5",
+    "location": "Appendices",
+    "type": "Missing Appendix Material",
+    "severity": "High",
+    "description": "Critical experimental details (all 20 problem texts, prompt templates, verifier pseudocode, and trace forensics) were omitted from the PDF.",
+    "cause": "Conference 4-page space constraints carried over into preprint draft.",
+    "correction": "Include complete Appendices A through F providing full benchmark registry, tokenization templates, and verification algorithms."
+  }
+]
