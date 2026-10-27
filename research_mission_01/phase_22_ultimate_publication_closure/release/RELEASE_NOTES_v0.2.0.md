@@ -42,7 +42,7 @@ This release establishes the complete empirical characterization of continuation
 
 ## Release Assets
 
-- `RecoveryEval_FINAL_INDEPENDENT_EVIDENCE_PACKAGE.zip` (265,419 bytes, SHA-256: `d2c0428ea9b1e660685eaae8534929e7e9f71928f61a31eaf62567a74849de66`)
+- `RecoveryEval_FINAL_INDEPENDENT_EVIDENCE_PACKAGE.zip` (266,322 bytes, SHA-256: `625e397ddd3f3988ccb4bbb0688e839f48d933e7423d9d7bca472189d99c2313`)
 - `RecoveryEval_FINAL_arXiv.pdf` (290,971 bytes, SHA-256: `6a4343fd12a4fb0873af7a252d73708fa6fab195bb014a7ac25e1bdb5468e3db`)
 - `RecoveryEval_FINAL_arXiv_Source.zip` (141,898 bytes, SHA-256: `7ec36aedf0626ed52e24d72ff1022e125a64542eecdd88efd5a8d0c3f375b72e`)
 

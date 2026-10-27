@@ -12,7 +12,7 @@ This manifest documents the cryptographic SHA-256 checksums and exact file sizes
 | :--- | :---: | :--- | :--- |
 | `data/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl` | 382,803 | `b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15` | Primary 400 neural rollout observations |
 | `research_mission_01/phase_5_final_experimental_validation/BALANCED_PROMPT_REGISTRY.json` | 44,048 | `d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c` | 20 canonical benchmark problem definitions |
-| `research_mission_01/phase_22_ultimate_publication_closure/evidence_package/RecoveryEval_FINAL_INDEPENDENT_EVIDENCE_PACKAGE.zip` | 265,419 | `d2c0428ea9b1e660685eaae8534929e7e9f71928f61a31eaf62567a74849de66` | Self-contained independent evidence package |
+| `research_mission_01/phase_22_ultimate_publication_closure/evidence_package/RecoveryEval_FINAL_INDEPENDENT_EVIDENCE_PACKAGE.zip` | 266,322 | `625e397ddd3f3988ccb4bbb0688e839f48d933e7423d9d7bca472189d99c2313` | Self-contained independent evidence package |
 | `research_mission_01/phase_22_ultimate_publication_closure/arxiv_submission/RecoveryEval_FINAL_arXiv_Source.zip` | 141,898 | `7ec36aedf0626ed52e24d72ff1022e125a64542eecdd88efd5a8d0c3f375b72e` | Standalone arXiv source archive |
 | `research_mission_01/phase_22_ultimate_publication_closure/output/RecoveryEval_FINAL_arXiv.pdf` | 290,971 | `6a4343fd12a4fb0873af7a252d73708fa6fab195bb014a7ac25e1bdb5468e3db` | Final certified 17-page research preprint PDF |
 | `research_mission_01/phase_22_ultimate_publication_closure/verification/reproduce_from_raw.py` | 10,812 | `d9fcff4c7d0a0cae0e29b1652f14aa91b18d2d6c1be7ea278d655f050519391b` | Standalone reproduction engine script |
