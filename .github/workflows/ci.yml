@@ -1,0 +1,73 @@
+name: Scientific Integrity & Continuous Integration
+
+on:
+  push:
+    branches: [ main, research/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  scientific-verification:
+    name: Scientific Verification & Regression Testing
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest pytest-cov
+
+      - name: Verify Primary Dataset and Registry Checksums
+        run: |
+          echo "Verifying SHA-256 Checksums..."
+          python -c '
+          import hashlib
+          from pathlib import Path
+
+          expected_dataset = "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15"
+          expected_registry = "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c"
+
+          dataset_path = Path("data/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl")
+          registry_path = Path("research_mission_01/phase_5_final_experimental_validation/BALANCED_PROMPT_REGISTRY.json")
+
+          assert dataset_path.exists(), f"Dataset file missing: {dataset_path}"
+          assert registry_path.exists(), f"Registry file missing: {registry_path}"
+
+          d_sha = hashlib.sha256(dataset_path.read_bytes()).hexdigest()
+          r_sha = hashlib.sha256(registry_path.read_bytes()).hexdigest()
+
+          assert d_sha == expected_dataset, f"Dataset hash mismatch: {d_sha} != {expected_dataset}"
+          assert r_sha == expected_registry, f"Registry hash mismatch: {r_sha} != {expected_registry}"
+          print("Dataset and Registry SHA-256 verified 100% bit-exact!")
+          '
+
+      - name: Execute Full Pytest Test Suite
+        run: |
+          pytest tests/ -v
+
+      - name: Execute Standalone Reproduction Engine
+        run: |
+          python research_mission_01/phase_22_ultimate_publication_closure/verification/reproduce_from_raw.py
+
+      - name: Verify Clean-Room Reproducibility in Isolated Temp Directory
+        run: |
+          mkdir -p /tmp/ci_clean_room
+          cp research_mission_01/phase_22_ultimate_publication_closure/evidence_package/RecoveryEval_FINAL_INDEPENDENT_EVIDENCE_PACKAGE.zip /tmp/ci_clean_room/
+          cd /tmp/ci_clean_room
+          unzip -q RecoveryEval_FINAL_INDEPENDENT_EVIDENCE_PACKAGE.zip
+          cd RecoveryEval_FINAL_INDEPENDENT_EVIDENCE_PACKAGE
+          shasum -a 256 -c MANIFEST_SHA256.txt
+          python verification/reproduce_from_raw.py

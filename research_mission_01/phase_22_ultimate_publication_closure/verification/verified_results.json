@@ -1,0 +1,119 @@
+{
+  "dataset_metadata": {
+    "file": "/Users/shamthakare/.gemini/antigravity/scratch/recovery_eval/data/10_COMPLETE_QWEN_PROTOCOL2_ROLLOUTS.jsonl",
+    "sha256": "b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15",
+    "total_observations": 400,
+    "truncations": 0,
+    "eos_hit_rate": 1.0
+  },
+  "benchmark_metadata": {
+    "file": "/Users/shamthakare/.gemini/antigravity/scratch/recovery_eval/research_mission_01/phase_5_final_experimental_validation/BALANCED_PROMPT_REGISTRY.json",
+    "sha256": "d312bea07a4985ee49176e51ad0eea3a99f7445325c375561ac69b1871a2f08c",
+    "problem_count": 20,
+    "character_invariance_delta_chars_zero": true
+  },
+  "overall_metrics": {
+    "control_accuracy": {
+      "count": "200/200",
+      "rate": 1.0,
+      "ci_95_clopper_pearson": [
+        0.9817,
+        1.0
+      ]
+    },
+    "spontaneous_recovery": {
+      "count": "0/200",
+      "rate": 0.0,
+      "ci_95_clopper_pearson": [
+        0.0,
+        0.0183
+      ],
+      "one_sided_95_upper_bound": 0.0149
+    },
+    "error_propagation": {
+      "count": "197/200",
+      "rate": 0.985,
+      "base_rate": 1.0,
+      "instruct_rate": 0.97
+    },
+    "alternative_divergence": {
+      "count": "3/200",
+      "rate": 0.015,
+      "base_rate": 0.0,
+      "instruct_rate": 0.03
+    },
+    "problem_cluster_sensitivity_bound_n20": 0.1391,
+    "finite_sample_causal_contrast": {
+      "point_estimate_delta": -1.0,
+      "sample_sd": 0.0,
+      "standard_error": 0.0,
+      "t_statistic_mathematical_form": "-1.0000 / 0.0000 (UNDEFINED; zero standard error singularity)"
+    }
+  },
+  "forensic_audits": {
+    "three_divergences": {
+      "count": 3,
+      "instances": [
+        {
+          "rollout_id": "balanced_gsm8k_fresh_004_recovery_Qwen2.5-Math-1.5B-Instruct_s401",
+          "problem_id": "gsm8k_fresh_004",
+          "model": "Qwen2.5-Math-1.5B-Instruct",
+          "seed": 401,
+          "gold": 180,
+          "corrupted_target": 188,
+          "generated_text": "4 notebooks/hour * 5 hours = 20 notebooks sold\n20 notebooks * $4/notebook = $80\n\nThe total revenue for the 5-hour period is $80.\n\nFinal Answer: \\boxed{80}"
+        },
+        {
+          "rollout_id": "balanced_gsm8k_fresh_004_recovery_Qwen2.5-Math-1.5B-Instruct_s403",
+          "problem_id": "gsm8k_fresh_004",
+          "model": "Qwen2.5-Math-1.5B-Instruct",
+          "seed": 403,
+          "gold": 180,
+          "corrupted_target": 188,
+          "generated_text": "4 notebooks/hour * 5 hours = 20 notebooks in total\n20 notebooks * $4/notebook = $80\nThe total revenue is $80.\nThe answer is: $80."
+        },
+        {
+          "rollout_id": "balanced_gsm8k_fresh_004_recovery_Qwen2.5-Math-1.5B-Instruct_s405",
+          "problem_id": "gsm8k_fresh_004",
+          "model": "Qwen2.5-Math-1.5B-Instruct",
+          "seed": 405,
+          "gold": 180,
+          "corrupted_target": 188,
+          "generated_text": "4 notebooks/hour * 5 hours = 20 notebooks sold\n20 notebooks * $4/notebook = $80"
+        }
+      ]
+    },
+    "three_heuristic_disagreements": {
+      "count": 3,
+      "instances": [
+        {
+          "rollout_id": "balanced_gsm8k_fresh_004_control_Qwen2.5-Math-1.5B_s405",
+          "problem_id": "gsm8k_fresh_004",
+          "model": "Qwen2.5-Math-1.5B",
+          "seed": 405,
+          "gold": 180,
+          "text_snippet": "ooks sold by the price per notebook to find the total revenue.\n- In step 3, we provide the final answer to the question.",
+          "structural_verdict": "SUCCESS"
+        },
+        {
+          "rollout_id": "balanced_gsm8k_fresh_006_control_Qwen2.5-Math-1.5B_s405",
+          "problem_id": "gsm8k_fresh_006",
+          "model": "Qwen2.5-Math-1.5B",
+          "seed": 405,
+          "gold": 176,
+          "text_snippet": " notebooks sold by the price per notebook to get the total revenue.\n- In step 3, we present the final answer in dollars.",
+          "structural_verdict": "SUCCESS"
+        },
+        {
+          "rollout_id": "balanced_gsm8k_fresh_013_control_Qwen2.5-Math-1.5B_s405",
+          "problem_id": "gsm8k_fresh_013",
+          "model": "Qwen2.5-Math-1.5B",
+          "seed": 405,
+          "gold": 360,
+          "text_snippet": "notebooks sold by the price per notebook to find the total revenue.\n- In step 3, we present the final answer in dollars.",
+          "structural_verdict": "SUCCESS"
+        }
+      ]
+    }
+  }
+}

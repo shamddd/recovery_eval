@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "recovery_eval"
-version = "1.0.0"
-description = "State-Matched and Provenance-Aware Evaluation of Recovery Behavior in Language-Model Reasoning"
+version = "0.2.0"
+description = "Evaluating Continuation Inertia Under Injected Reasoning Errors in Large Language Models"
 authors = [
-  { name="Sham Satish Thakare", email="shamthakare@gmail.com" }
+  { name = "Sham Satish Thakare", email = "shamthakare@gmail.com" }
 ]
 license = { text = "MIT" }
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = [
   "numpy>=1.24.0",
   "scipy>=1.10.0",
@@ -19,9 +19,14 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "pytest>=8.0.0"
+  "pytest>=8.0.0",
+  "pytest-cov>=4.0.0",
 ]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+addopts = "-v --strict-markers"
+
+[tool.setuptools.packages.find]
+where = ["src"]

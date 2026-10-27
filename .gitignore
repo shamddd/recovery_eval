@@ -48,6 +48,9 @@ Thumbs.db
 *.swp
 *.swo
 
+# Local archives
+Archive.zip
+
 # LaTeX auxiliary
 *.aux
 *.bbl
