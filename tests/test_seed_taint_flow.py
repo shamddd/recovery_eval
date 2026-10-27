@@ -40,7 +40,7 @@ class SeedTaintVisitor(ast.NodeVisitor):
 
 def test_seed_taint_flow():
     """AST static analysis ensuring seed variables are strictly confined to approved RNG calls."""
-    active_dir = "research-next/ieee_bigdata_2026"
+    active_dir = "src/recovery_eval" if os.path.exists("src/recovery_eval") else "research-next/ieee_bigdata_2026"
     all_violations = []
     
     for root, dirs, files in os.walk(active_dir):

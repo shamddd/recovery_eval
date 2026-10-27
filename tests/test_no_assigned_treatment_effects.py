@@ -9,7 +9,7 @@ CANONICAL_BANNED_KEYWORDS = {
 
 def test_no_assigned_treatment_effects():
     """Scan active code using single canonical immutable set of banned keywords."""
-    active_dir = "research-next/ieee_bigdata_2026"
+    active_dir = "src/recovery_eval" if os.path.exists("src/recovery_eval") else "research-next/ieee_bigdata_2026"
     for root, dirs, files in os.walk(active_dir):
         for f in files:
             if f.endswith(".py") and not f.startswith("test_"):

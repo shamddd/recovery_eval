@@ -5,7 +5,7 @@ def test_no_hardcoded_publication_results():
     """Ensure no hardcoded publication numbers exist in runtime evaluation scripts."""
     pattern_a = "v_full" + "_sr = 0.81"
     pattern_b = "0.03125"
-    active_dir = "research-next/ieee_bigdata_2026"
+    active_dir = "src/recovery_eval" if os.path.exists("src/recovery_eval") else "research-next/ieee_bigdata_2026"
     for root, dirs, files in os.walk(active_dir):
         for f in files:
             if f.endswith(".py") and not f.startswith("test_"):
