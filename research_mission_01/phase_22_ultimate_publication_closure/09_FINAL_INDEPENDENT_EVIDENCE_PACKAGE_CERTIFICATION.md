@@ -4,9 +4,9 @@
 
 This report certifies the standalone, self-contained scientific evidence package:
 - **Archive File**: `research_mission_01/phase_22_ultimate_publication_closure/evidence_package/RecoveryEval_FINAL_INDEPENDENT_EVIDENCE_PACKAGE.zip`
-- **File Size**: `266,322` bytes (~260 KB)
+- **File Size**: `266,750` bytes (~260 KB)
 - **SHA-256 Checksum**:
-  `625e397ddd3f3988ccb4bbb0688e839f48d933e7423d9d7bca472189d99c2313`
+  `3804f704fd605a8584314c981315d3ef280894ebaa086e48e0243ffe7b5620e6`
 
 This package guarantees permanent, independent reproducibility. Any researcher, reviewer, or archival auditor can extract the zip file on any standard machine equipped with Python 3.9+ and reproduce the entire empirical evaluation offline in under 1 second without internet, cloud credentials, or GPU access.
 
