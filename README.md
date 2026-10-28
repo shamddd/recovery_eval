@@ -107,7 +107,7 @@ If you use RecoveryEval, its evaluation protocols, or the frozen empirical rollo
 ## 7. License
 
 - **Code & Scripts**: Licensed under the [MIT License](LICENSE).
-- **Dataset & Benchmark**: Licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0).
+- **Dataset & Benchmark**: Made available under the [MIT License](LICENSE) (Copyright (c) 2026 Sham Satish Thakare).
 - **Preprint Manuscript**: Open access preprint distributed under the arXiv perpetual non-exclusive license.
 
 ---

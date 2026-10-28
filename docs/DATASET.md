@@ -6,7 +6,7 @@
 - **File Size**: `382,803` bytes
 - **SHA-256 Checksum**: `b8792f8df375fccdbd800d440cc884ef2db2f860ff3533af01c70161a5cc1d15`
 - **Total Record Count**: `400` valid JSONL entries.
-- **License**: Creative Commons Attribution 4.0 International (CC BY 4.0).
+- **License**: MIT License (Copyright (c) 2026 Sham Satish Thakare).
 
 ---
 
